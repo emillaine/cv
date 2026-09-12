@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Emil Laine – Senior Full-Stack Developer, UI/UX & Visual Focus</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background: #fff;
+    color: #111;
+    line-height: 1.6;
+    font-size: 14.5px;
+  }
+  a { color: #111; text-decoration-color: #999; text-underline-offset: 2px; }
+  a:hover { text-decoration-color: #111; }
+
+  .page {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 48px 32px;
+    background: #fff;
+  }
+  header { margin-bottom: 28px; }
+  .header-row {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .header-main { flex: 1; min-width: 0; }
+  h1 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    color: #111;
+    line-height: 1.15;
+  }
+  .role {
+    margin-top: 2px;
+    font-size: 15px;
+    color: #333;
+  }
+  .contact {
+    margin-top: 10px;
+    font-size: 13.5px;
+    color: #333;
+  }
+  .contact-links {
+    margin-top: 6px;
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #111;
+    text-decoration: none;
+    border-bottom: 1px solid #bbb;
+    padding-bottom: 1px;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  .icon-link:hover { border-bottom-color: #111; }
+  .icon-link svg { width: 14px; height: 14px; fill: #111; flex: 0 0 14px; }
+  .summary {
+    margin-top: 12px;
+    font-size: 14.5px;
+    color: #222;
+    max-width: 65ch;
+  }
+  .summary + .summary { margin-top: 8px; }
+
+  /* Portrait placeholder – save your photo as portrait.jpg next to index.html,
+     then replace this div with:
+     <img class="portrait-img" src="portrait.jpg" alt="Portrait of Emil Laine" /> */
+  .portrait {
+    flex: 0 0 104px;
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    border: 1px dashed #bbb;
+    background: #f6f6f6;
+    color: #555;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    gap: 4px;
+    user-select: none;
+  }
+  .portrait small { font-size: 9.5px; font-weight: 400; color: #888; }
+  .portrait-img {
+    flex: 0 0 104px;
+    width: 104px;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+  }
+
+  section { margin-bottom: 26px; }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    border-bottom: 1px solid #d1d1d1;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+  }
+  h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #111;
+    line-height: 1.35;
+  }
+  .meta {
+    font-size: 13px;
+    font-weight: 400;
+    color: #555;
+  }
+  .job { margin-bottom: 18px; }
+  .job:last-child { margin-bottom: 0; }
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .company {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  /* Company / client logos (saved locally in logos/ for offline reliability) */
+  .logo-img {
+    height: 28px;
+    width: auto;
+    max-width: 110px;
+    object-fit: contain;
+    padding: 2px 4px 2px 0;
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    color: #111;
+  }
+  .date { font-size: 13px; color: #555; white-space: nowrap; }
+  .clients-row {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    align-items: center;
+  }
+  .clients-label { font-size: 13px; color: #555; }
+  .client-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #111;
+    background: #f2f2f2;
+  }
+  .chip-img {
+    height: 18px;
+    width: auto;
+    max-width: 60px;
+    object-fit: contain;
+    display: block;
+    font-size: 9px;
+    font-weight: 800;
+    color: #111;
+  }
+
+  /* Condensed bullet lists */
+  ul { margin: 6px 0 0 18px; }
+  li { margin-bottom: 3px; color: #222; line-height: 1.45; }
+  li strong { color: #111; font-weight: 650; }
+  .skills-list { list-style: none; margin: 0; }
+  .skills-list li { margin-bottom: 5px; line-height: 1.45; }
+  .skills-list span.label { font-weight: 700; color: #111; }
+  /* Single-line horizontal list: no bullet */
+  .flat-list { list-style: none; margin-left: 0; }
+  .flat-list li { display: flex; gap: 28px; flex-wrap: wrap; }
+
+  /* Client work under Reaktor, flush with the job content */
+  .sub-client {
+    margin: 10px 0 0 0;
+    padding: 10px 0 2px 0;
+  }
+  .sub-client .via {
+    font-size: 12.5px;
+    font-weight: 400;
+    color: #555;
+  }
+  /* Selected client work: logo + text rows, no bullets */
+  .client-entry {
+    display: flex;
+    gap: 12px;
+    margin-top: 12px;
+    align-items: flex-start;
+  }
+  .client-entry .entry-logo {
+    flex: 0 0 56px;
+    width: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30px;
+    padding-top: 2px;
+  }
+  .client-entry .entry-logo img {
+    max-width: 56px;
+    max-height: 26px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+  /* Per-logo optical sizing: tall/square logos need more height,
+     wide solid logos need less to avoid dominating */
+  .client-entry .entry-logo img.logo-epic { max-height: 36px; max-width: 40px; }
+  .client-entry .entry-logo img.logo-rds { max-height: 34px; max-width: 34px; }
+  .client-entry .entry-logo img.logo-at { max-height: 34px; max-width: 34px; border-radius: 4px; }
+  .client-entry .entry-logo img.logo-kone { max-height: 18px; max-width: 48px; }
+  .entry-mono {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    min-width: 36px;
+    padding: 0 6px;
+    background: #f2f2f2;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 800;
+    color: #111;
+  }
+  .client-entry .entry-title { font-size: 14px; color: #111; }
+  .client-entry p { font-size: 13.8px; line-height: 1.5; color: #222; margin-top: 1px; }
+
+  .toolbar {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 12px 32px 0;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .toolbar button {
+    font: inherit;
+    font-size: 13px;
+    padding: 6px 14px;
+    border: 1px solid #d1d1d1;
+    background: #fff;
+    color: #111;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  @media (max-width: 600px) {
+    .page { padding: 32px 20px; }
+    .header-row { flex-direction: column-reverse; }
+  }
+  /* Every printed page gets real top/bottom margins via @page.
+     NOTE: the browser's own header/footer (URL, date, page numbers) is
+     controlled by the print dialog – uncheck "Headers and footers" when
+     saving the PDF. (A zero @page margin would suppress them via CSS but
+     breaks top/bottom margins on multi-page documents.) */
+  @page { size: A4; margin: 13mm 12mm; }
+  @media print {
+    .toolbar { display: none; }
+    .page { padding: 0; max-width: none; }
+    a[href]:after { content: none !important; }
+    h2, h3 { break-after: avoid; }
+    header, .job, li { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<div class="toolbar">
+  <button onclick="window.print()">Print / Save as PDF</button>
+</div>
+
+<div class="page">
+  <header>
+    <div class="header-row">
+      <div class="header-main">
+        <h1>Emil Laine</h1>
+        <div class="role">Senior Full-Stack Developer, Generalist — UI/UX & Visual Focus</div>
+        <div class="contact">
+          Arabianranta, Helsinki · +358 45 652 9227 · <a href="mailto:laine.emil@gmail.com">laine.emil@gmail.com</a>
+          <div class="contact-links">
+            <a class="icon-link" href="#">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93C7.05 19.44 4 16.08 4 12c0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+              Portfolio
+            </a>
+            <a class="icon-link" href="https://github.com/emillaine">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub
+            </a>
+            <a class="icon-link" href="#">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
+            </a>
+            <a class="icon-link" href="https://stackoverflow.com/users/3425536/flogram-dev">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.725 0l-1.72 1.277 6.39 8.588 1.716-1.277L15.725 0zm-3.94 3.418l-1.369 1.644 8.225 6.85 1.369-1.644-8.225-6.85zm-3.15 4.465l-.905 1.94 9.702 4.517.904-1.94-9.701-4.517zm-1.85 4.86l-.44 2.093 10.473 2.201.44-2.092-10.473-2.203zM1.89 15.47V24h19.19v-8.53h-2.133v6.397H4.021v-6.396H1.89zm4.265 2.133v2.13h10.66v-2.13H6.154Z"/></svg>
+              Stack Overflow
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Portrait: save the provided photo as portrait.jpg next to index.html -->
+      <img class="portrait-img" src="portrait.jpg" alt="Portrait of Emil Laine" onerror="this.style.display='none'" />
+    </div>
+    <p class="summary">
+      7 years in software consultancy building full-stack products with multidisciplinary teams.
+      Specialized in React, TypeScript, and Node.js product engineering.
+      Past clients include Epic Games, Adidas, and KONE.
+      I do my best work where engineering meets UI/UX and visuals — design systems, interfaces, game graphics, and developer UX such as language design and tooling.
+    </p>
+    <p class="summary">
+      I do most implementation with AI coding agents, and focus my own time on architecture, specs, reviews, and keeping quality high – writing code myself where it matters most: tricky debugging, performance, and critical parts.
+    </p>
+  </header>
+
+  <section>
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li><span class="label">Product engineering:</span> React, TypeScript, Node.js, PostgreSQL – full-stack apps from discovery to handover, incl. global rollouts (30+ countries) and agency takeovers</li>
+      <li><span class="label">Focus – UI/UX, design systems & visuals:</span> component libraries, data visualization, accessibility, CMS-driven sites (Contentful, Shopify, Gatsby), SCSS; game graphics, shaders, procedural content</li>
+      <li><span class="label">Delivery &amp; collaboration:</span> embedded client teams, Agile (Kanban, Scrum), testing &amp; CI (Jest), code reviews, knowledge transfer</li>
+      <li><span class="label">Additional:</span> language design and dev tooling (compilers, VS Code extensions); Go + WebAssembly, C/C++, C#, MongoDB, React Native, PWA and e-commerce; Unity/Unreal/Godot for rapid prototyping</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="company">
+          <img class="logo-img" src="logos/reaktor.jpg" alt="Reaktor logo" title="Reaktor" />
+          <h3>Reaktor – Software Developer, Consultant</h3>
+        </div>
+        <span class="date">2017 – 2024 <span class="meta">(one-year leave in 2020 for civilian service)</span></span>
+      </div>
+      <ul>
+        <li>Delivered <strong>full-stack web applications</strong> (React, Node.js, TypeScript, PostgreSQL) in client-embedded, multidisciplinary teams.</li>
+        <li>Gravitate toward <strong>UI-heavy, visual work</strong> — polished, accessible features with designers; raised quality via <strong>testing, reviews, and shared practices</strong>.</li>
+      </ul>
+      <div class="sub-client">
+        <h3>Selected client work</h3>
+        <div class="client-entry">
+          <span class="entry-logo"><img class="logo-epic" src="logos/epic-games.svg" alt="Epic Games logo" title="Epic Games" /></span>
+          <div>
+            <div class="entry-title"><strong>Epic Games, Design Systems</strong> <span class="meta">– Senior Software Developer (2021 – 2024)</span></div>
+            <p>Shipped a cross-team React design system (components, icons, data-viz) for consistency, performance and accessibility; contributed to the parental PIN feature on consoles (Fortnite, Fall Guys, Rocket League).</p>
+          </div>
+        </div>
+        <div class="client-entry">
+          <span class="entry-logo"><img class="logo-at" src="logos/another-tomorrow.jpg" alt="Another Tomorrow logo" title="Another Tomorrow" /></span>
+          <div>
+            <div class="entry-title"><strong>Another Tomorrow – full site rewrite</strong> <span class="meta">(2021)</span></div>
+            <p>Full rewrite of AnotherTomorrow.co after taking over from another agency; from Vue/Nuxt + Shopify to React/Gatsby + Contentful on the Chord sales platform, including the new landing page.</p>
+          </div>
+        </div>
+        <div class="client-entry">
+          <span class="entry-logo"><img class="logo-rds" src="logos/reaktor-defsec.png" alt="Reaktor Defence and Security logo" title="Reaktor Defence & Security" /></span>
+          <div>
+            <div class="entry-title"><strong>Reaktor Defence & Security</strong> <span class="meta">(2021)</span></div>
+            <p>Full-stack development; details confidential due to client constraints.</p>
+          </div>
+        </div>
+        <div class="client-entry">
+          <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
+          <div>
+            <div class="entry-title"><strong>KONE Care Contract sales tool</strong> <span class="meta">(2019)</span></div>
+            <p>Global maintenance-contract tool in 30+ countries; joined the USA/Canada rollout implementing new requirements, incl. a business-rules UI for the offer wizard. <span class="meta">React, Node.js, TypeScript, PostgreSQL</span></p>
+          </div>
+        </div>
+        <div class="client-entry">
+          <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
+          <div>
+            <div class="entry-title"><strong>KONE Residential Flow sales tool</strong> <span class="meta">(2018 – 2019)</span></div>
+            <p>Sales tool in 20+ countries; auto-generated sales PDFs; owned technical handover to the follow-up team. <span class="meta">React, Node.js, TypeScript, PostgreSQL</span></p>
+          </div>
+        </div>
+        <div class="client-entry">
+          <span class="entry-logo"><img src="logos/adidas.svg" alt="Adidas logo" title="Adidas" /></span>
+          <div>
+            <div class="entry-title"><strong>Adidas Glass</strong> <span class="meta">(2017)</span></div>
+            <p>Part of the React rewrite of the adidas global site; implemented components for the new responsive, accessible landing page (e.g. carousels) with designers. <span class="meta">React</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Independent – Game Developer</h3>
+        <span class="date">2024 – Present</span>
+      </div>
+      <ul>
+        <li>Full-time focus on <strong>game development</strong>: game design, graphics, and shipping playable work.</li>
+        <li>Shipped <strong>multiple prototypes with playtests</strong> across Unity, Unreal Engine 5, and Godot – concept to build, end to end.</li>
+        <li>Studied <strong>game graphics</strong>: pixel art and 3D (Blender), shaders (GLSL/HLSL, Material/Shader Graph), procedural content (UE5 PCG, geometry nodes).</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <div class="company">
+          <img class="logo-img" src="logos/glivelab.svg" alt="G Livelab logo" title="G Livelab" />
+          <h3>G Livelab – Software Developer<br /><span class="meta">(Civilian Service, Livelaboratorio Oy / Finnish Musicians' Union)</span></h3>
+        </div>
+        <span class="date">2020</span>
+      </div>
+      <ul>
+        <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta">Node.js, Mux, MongoDB</span></li>
+        <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket management, website, and mobile app.</li>
+        <li>Also contributed to <strong>Radio Helsinki</strong> web features (operated by the same owner).</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Selected projects</h2>
+
+    <div class="job">
+      <div class="job-head">
+        <h3>Alchemist – systemic roguelike <span class="meta">(private project)</span></h3>
+        <span class="date">Godot, C#</span>
+      </div>
+      <ul>
+        <li>2D pixel-art systemic roguelike with <strong>emergent mechanics</strong> and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests.</li>
+        <li>Developed with a <strong>multi-agent workflow</strong>: living spec docs, parallel implementation, review-led quality.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3><a href="https://github.com/emillaine/ts-llvm">ts-llvm – TypeScript to LLVM compiler</a></h3>
+        <span class="date">293 ★ · TypeScript, C++, LLVM</span>
+      </div>
+      <ul>
+        <li>Compiles strictly-typed TypeScript to LLVM IR via the <strong>TypeScript Compiler API</strong>, targeting native code / WebAssembly.</li>
+        <li>Built <strong>C++ runtime</strong> for built-in APIs; driven by interest in language design and compiler UX.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head">
+        <h3><a href="https://github.com/emillaine/cx">C* – hybrid systems programming language</a></h3>
+        <span class="date">144 ★ · C++, LLVM/Clang</span>
+      </div>
+      <ul>
+        <li>Designed and built a <strong>modern systems language for performance + productivity</strong> with attention to syntax and developer UX: compiler, test suite, VS Code extension, docs site.</li>
+        <li>End-to-end ownership of <strong>architecture, tooling, and iterative delivery</strong> over multiple years.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Community</h2>
+    <ul>
+      <li><strong>Stack Overflow</strong> (<a href="https://stackoverflow.com/users/3425536/flogram-dev">flogram-dev</a>) – 43k reputation from 917 answers, 4.0M people reached. Gold badge in C++; top tags C++ and C. A track record of explaining hard topics clearly.</li>
+      <li><strong>Upstream contributions</strong> (all merged) – MUI, DefinitelyTyped (<span style="white-space:nowrap">@types/react</span>), rust-lang/rust, llvm-node, digabi rich-text-editor, ~50 PRs to the IVAN roguelike as org member.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <ul class="flat-list">
+      <li><span><strong>Finnish</strong> <span class="meta">– native</span></span><span><strong>English</strong> <span class="meta">– fluent</span></span><span><strong>German</strong> <span class="meta">– advanced</span></span><span><strong>Swedish</strong> <span class="meta">– basics</span></span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <ul>
+      <li><strong>Computer Science, University of Helsinki</strong> <span class="meta">– 2015 – 2018</span></li>
+      <li><strong>Vocational Qualification in Media and Visual Expression, Game Production – Stadin AO</strong> <span class="meta">– Jan 2026 – Aug 2026 · game-ready 3D art and pipelines</span></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Creative work</h2>
+    <ul>
+      <li><strong>Electronic music as Flogram (2011 – Present):</strong> releases on streaming platforms, DJ gigs, plus audio design and atmospheric work that feeds into interactive projects.</li>
+    </ul>
+  </section>
+
+</div>
+
+</body>
+</html>
