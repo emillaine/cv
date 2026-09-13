@@ -24,12 +24,13 @@
   }
   header { margin-bottom: 28px; }
   .header-row {
+    position: relative;
     display: flex;
     gap: 24px;
     align-items: flex-start;
     justify-content: space-between;
   }
-  .header-main { flex: 1; min-width: 0; }
+  .header-main { flex: 1; min-width: 0; padding-right: 190px; }
   h1 {
     font-size: 34px;
     font-weight: 700;
@@ -74,33 +75,20 @@
   }
   .summary + .summary { margin-top: 8px; }
 
-  /* Portrait placeholder – save your photo as portrait.jpg next to index.html,
-     then replace this div with:
-     <img class="portrait-img" src="portrait.jpg" alt="Portrait of Emil Laine" /> */
-  .portrait {
-    flex: 0 0 104px;
-    width: 104px;
-    height: 104px;
-    border-radius: 50%;
-    border: 1px dashed #bbb;
-    background: #f6f6f6;
-    color: #555;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: 26px;
-    font-weight: 700;
-    line-height: 1;
-    gap: 4px;
-    user-select: none;
-  }
-  .portrait small { font-size: 9.5px; font-weight: 400; color: #888; }
   .portrait-img {
-    flex: 0 0 104px;
-    width: 104px;
-    height: auto;
-    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 100%;
+    max-height: 166px;
+    width: auto;
+    max-width: 166px;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    object-fit: cover;
     display: block;
   }
 
@@ -138,7 +126,6 @@
     align-items: center;
     gap: 10px;
   }
-  /* Company / client logos (saved locally in logos/ for offline reliability) */
   .logo-img {
     height: 28px;
     width: auto;
@@ -151,59 +138,18 @@
     color: #111;
   }
   .date { font-size: 13px; color: #555; white-space: nowrap; }
-  .clients-row {
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    margin-top: 8px;
-    align-items: center;
-  }
-  .clients-label { font-size: 13px; color: #555; }
-  .client-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    border: none;
-    border-radius: 6px;
-    padding: 4px 10px;
-    font-size: 12.5px;
-    font-weight: 600;
-    color: #111;
-    background: #f2f2f2;
-  }
-  .chip-img {
-    height: 18px;
-    width: auto;
-    max-width: 60px;
-    object-fit: contain;
-    display: block;
-    font-size: 9px;
-    font-weight: 800;
-    color: #111;
-  }
-
-  /* Condensed bullet lists */
-  ul { margin: 6px 0 0 18px; }
   li { margin-bottom: 3px; color: #222; line-height: 1.45; }
   li strong { color: #111; font-weight: 650; }
   .skills-list { list-style: none; margin: 0; }
   .skills-list li { margin-bottom: 5px; line-height: 1.45; }
   .skills-list span.label { font-weight: 700; color: #111; }
-  /* Single-line horizontal list: no bullet */
   .flat-list { list-style: none; margin-left: 0; }
   .flat-list li { display: flex; gap: 28px; flex-wrap: wrap; }
 
-  /* Client work under Reaktor, flush with the job content */
   .sub-client {
     margin: 10px 0 0 0;
     padding: 10px 0 2px 0;
   }
-  .sub-client .via {
-    font-size: 12.5px;
-    font-weight: 400;
-    color: #555;
-  }
-  /* Selected client work: logo + text rows, no bullets */
   .client-entry {
     display: flex;
     gap: 12px;
@@ -227,25 +173,10 @@
     object-fit: contain;
     display: block;
   }
-  /* Per-logo optical sizing: tall/square logos need more height,
-     wide solid logos need less to avoid dominating */
   .client-entry .entry-logo img.logo-epic { max-height: 36px; max-width: 40px; }
   .client-entry .entry-logo img.logo-rds { max-height: 34px; max-width: 34px; }
   .client-entry .entry-logo img.logo-at { max-height: 34px; max-width: 34px; border-radius: 4px; }
   .client-entry .entry-logo img.logo-kone { max-height: 18px; max-width: 48px; }
-  .entry-mono {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    height: 24px;
-    min-width: 36px;
-    padding: 0 6px;
-    background: #f2f2f2;
-    border-radius: 5px;
-    font-size: 11px;
-    font-weight: 800;
-    color: #111;
-  }
   .client-entry .entry-title { font-size: 14px; color: #111; }
   .client-entry p { font-size: 13.8px; line-height: 1.5; color: #222; margin-top: 1px; }
 
@@ -269,12 +200,18 @@
   @media (max-width: 600px) {
     .page { padding: 32px 20px; }
     .header-row { flex-direction: column-reverse; }
+    .header-main { padding-right: 0; }
+    .portrait-img {
+      position: static;
+      height: 104px;
+      width: 104px;
+      max-height: none;
+      max-width: none;
+      margin: 0;
+      align-self: flex-start;
+    }
   }
-  /* Every printed page gets real top/bottom margins via @page.
-     NOTE: the browser's own header/footer (URL, date, page numbers) is
-     controlled by the print dialog – uncheck "Headers and footers" when
-     saving the PDF. (A zero @page margin would suppress them via CSS but
-     breaks top/bottom margins on multi-page documents.) */
+  /* Print: A4 with page margins. Disable browser headers/footers in the print dialog. */
   @page { size: A4; margin: 13mm 12mm; }
   @media print {
     .toolbar { display: none; }
@@ -319,7 +256,6 @@
           </div>
         </div>
       </div>
-      <!-- Portrait: save the provided photo as portrait.jpg next to index.html -->
       <img class="portrait-img" src="portrait.jpg" alt="Portrait of Emil Laine" onerror="this.style.display='none'" />
     </div>
     <p class="summary">
