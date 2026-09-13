@@ -180,6 +180,8 @@
   .client-entry .entry-logo img.logo-at { max-height: 34px; max-width: 36px; border-radius: 4px; }
   .client-entry .entry-logo img.logo-kone { max-height: 18px; max-width: 48px; }
   .entry-title { font-size: 14px; color: #111; }
+  .sub-work > .entry-title { margin-top: 12px; }
+  .sub-work > .entry-title + ul { margin-top: 3px; }
   .client-entry p { font-size: 13.8px; line-height: 1.5; color: #222; margin-top: 1px; }
 
   .toolbar {
@@ -264,7 +266,7 @@
       I work in deep focus with strong attention to detail, whether that means owning a whole product or going deep on my part of a larger team.
     </p>
     <p class="summary">
-      I do most implementation with AI coding agents, and focus my own time on architecture, specs, reviews, and keeping quality high – writing code myself where it matters most: tricky debugging, performance, and critical parts.
+      I prefer to focus my own time on architecture, design, specs, reviews, and keeping quality high, while delegating routine implementation to AI coding agents – writing code myself where it matters most: tricky debugging, performance, and critical parts.
     </p>
   </header>
 
@@ -272,10 +274,10 @@
     <h2>Skills</h2>
     <ul class="skills-list">
       <li><span class="label">Product engineering:</span> React, TypeScript, Node.js, PostgreSQL – full-stack apps from discovery to handover, incl. global rollouts (30+ countries) and agency takeovers</li>
-      <li><span class="label">UI/UX, design systems & visuals:</span> component libraries, data visualization, accessibility, CMS-driven sites (Contentful, Shopify, Gatsby), SCSS; game graphics, shaders, procedural content</li>
-      <li><span class="label">Systems programming:</span> C/C++, C# – compilers (LLVM), language design</li>
+      <li><span class="label">UI/UX, design systems & visuals:</span> component libraries, data visualization, accessibility, screen readers, CMS-driven sites, SCSS; game graphics, shaders, procedural content; language design and developer UX</li>
+      <li><span class="label">Game development:</span> Unity, Unreal Engine 5 (incl. Blueprints), Godot, C# – playable prototypes with playtests, from concept to build</li>
+      <li><span class="label">Systems programming:</span> C/C++, compilers (LLVM)</li>
       <li><span class="label">Delivery &amp; collaboration:</span> embedded client teams, Agile (Kanban, Scrum), testing &amp; CI (Jest), code reviews, knowledge transfer</li>
-      <li><span class="label">Additional:</span> Unity/Unreal/Godot for rapid prototyping</li>
     </ul>
   </section>
 
@@ -300,7 +302,7 @@
           <span class="entry-logo"><img class="logo-epic" src="logos/epic-games.svg" alt="Epic Games logo" title="Epic Games" /></span>
           <div>
             <div class="entry-title"><strong>Epic Games, Design Systems</strong> <span class="meta">– Senior Software Developer (2021 – 2024)</span></div>
-            <p>Shipped a cross-team React design system (components, icons, data-viz) for consistency, performance and accessibility; contributed to the parental PIN feature on consoles (Fortnite, Fall Guys, Rocket League).</p>
+            <p>Shipped a cross-team React design system (components, icons, data-viz) for consistency, performance and accessibility; contributed to the parental PIN feature on consoles (Fortnite, Fall Guys, Rocket League). <span class="meta tags">React, TypeScript, Design systems, Design tokens, Data visualization, Accessibility</span></p>
           </div>
         </div>
         <div class="client-entry">
@@ -338,6 +340,13 @@
             <p>Part of the React rewrite of the adidas global site; implemented components for the new responsive, accessible landing page (e.g. carousels) with designers. <span class="meta tags">React</span></p>
           </div>
         </div>
+        <div class="client-entry">
+          <span class="entry-logo"></span>
+          <div>
+            <div class="entry-title"><strong>Reaktor internal projects</strong></div>
+            <p>Reaktor Hunt coding puzzle game for recruiting; meeting-room system with facial-recognition lobby screen; Guidebook offline-first PWA from prototype to MVP; internal Events app, incl. calendar UI. <span class="meta tags">Go, WebAssembly, TypeScript, React, Node.js, PWA, UI/UX</span></p>
+          </div>
+        </div>
       </div>
     </div>
 
@@ -350,8 +359,8 @@
         <span class="date">2020</span>
       </div>
       <ul>
-        <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta tags">Node.js, Mux, MongoDB</span></li>
-        <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket management, website, and mobile app.</li>
+        <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta tags">Node.js, Flow, Mux, MongoDB</span></li>
+        <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket, product/inventory, and customer/employee management, plus website and mobile app.</li>
         <li>Also contributed to <strong>Radio Helsinki</strong> web features (operated by the same owner).</li>
       </ul>
     </div>
@@ -372,33 +381,32 @@
       </ul>
       <div class="sub-work">
         <h3>Selected game work</h3>
-        <div class="entry-title"><strong>Alchemist – systemic roguelike</strong> <span class="meta">Godot, C# (private project)</span></div>
+        <div class="entry-title"><strong>Alchemist – systemic roguelike</strong> <span class="meta">Godot, C#</span></div>
         <ul>
           <li>2D pixel-art systemic roguelike with <strong>emergent mechanics</strong> and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests.</li>
           <li>Developed with a <strong>multi-agent workflow</strong>: living spec docs, parallel implementation, review-led quality.</li>
         </ul>
+        <div class="entry-title"><strong>Kaiku – first-person exploration game</strong> <span class="meta">Unreal Engine 5</span></div>
+        <ul>
+          <li>Whole world generated at design time using <strong>UE5 PCG graphs operating on hand-drawn splines in 3D space</strong> to carve mountains, forests, paths, different biomes, lakes, bridges, etc.</li>
+        </ul>
+        <div class="entry-title"><strong><a href="https://flogram.itch.io/untitled-puzzle-game" target="_blank" rel="noopener">The Observer Effect – first-person puzzle game</a></strong> <span class="meta">Unreal Engine 5</span></div>
+        <ul>
+          <li><strong>Perspective puzzles</strong> – interact with hidden shapes embedded in the environment when looking at the right angle.</li>
+        </ul>
       </div>
     </div>
 
-    <div class="job">
-      <div class="job-head">
-        <h3><a href="https://github.com/emillaine/ts-llvm" target="_blank" rel="noopener">ts-llvm – TypeScript to LLVM compiler</a></h3>
-        <span class="date">293 ★ · TypeScript, C++, LLVM</span>
-      </div>
-      <ul>
-        <li>Compiles strictly-typed TypeScript to LLVM IR via the <strong>TypeScript Compiler API</strong>, targeting native code / WebAssembly.</li>
-        <li>Built <strong>C++ runtime</strong> for built-in APIs; driven by interest in language design and compiler UX.</li>
-      </ul>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <h3><a href="https://github.com/emillaine/cx" target="_blank" rel="noopener">C* – hybrid systems programming language</a></h3>
-        <span class="date">144 ★ · C++, LLVM/Clang</span>
-      </div>
+    <div class="sub-work">
+      <h3>Selected systems work</h3>
+      <div class="entry-title"><strong><a href="https://github.com/emillaine/cx" target="_blank" rel="noopener">C* – systems programming language</a></strong> <span class="meta">2017 – 2021 · C++, LLVM/Clang · 144 ★</span></div>
       <ul>
         <li>Designed and built a <strong>modern systems language for performance + productivity</strong> with attention to syntax and developer UX: compiler, test suite, <a href="https://emillaine.github.io/cx-language.github.io/" target="_blank" rel="noopener">project site</a>.</li>
         <li>End-to-end ownership of <strong>architecture, tooling, and iterative delivery</strong> over multiple years.</li>
+      </ul>
+      <div class="entry-title"><strong><a href="https://github.com/emillaine/ts-llvm" target="_blank" rel="noopener">ts-llvm – TypeScript to LLVM compiler</a></strong> <span class="meta">2018 · TypeScript, C++, LLVM · 293 ★</span></div>
+      <ul>
+        <li>Compiles strictly-typed TypeScript to LLVM IR via the <strong>TypeScript Compiler API</strong>, targeting native code / WebAssembly, with a small C++ runtime for built-in APIs.</li>
       </ul>
     </div>
   </section>
@@ -413,7 +421,7 @@
   <section>
     <h2>Education</h2>
     <ul>
-      <li><strong>Computer Science, University of Helsinki</strong> <span class="meta">– 2015 – 2018</span></li>
+      <li><strong>Computer Science, University of Helsinki</strong> <span class="meta">– 2015 – 2018</span><br /><span class="meta">Focus: full-stack web dev, programming languages, compilers, game dev</span></li>
       <li><strong>Vocational studies in 3D Game Graphics – Stadin AO</strong> <span class="meta">– 2026</span><br /><span class="meta"><span style="white-space:nowrap">3D modeling/texturing</span> and a team game project as project and tech-art lead</span></li>
     </ul>
   </section>
@@ -421,7 +429,9 @@
   <section>
     <h2>Additional</h2>
     <ul>
-      <li><strong>Stack Overflow</strong> (<a href="https://stackoverflow.com/users/3425536/flogram-dev" target="_blank" rel="noopener">flogram-dev</a>) – 43k reputation from 917 answers, 4.0M people reached. Gold badge in C++ and a top tag in C.</li>
+      <li><strong><a href="https://stackoverflow.com/users/3425536/flogram-dev" target="_blank" rel="noopener">Stack Overflow</a></strong> – 43k reputation from 917 answers, 4.0M people reached. 8 gold badges incl. C++, top tag in C.</li>
+      <li><strong>Open source</strong> – experience contributing to and maintaining open-source projects.</li>
+      <li><strong>Hackathons & game jams</strong> – <a href="https://flogram.itch.io/unsafe-space" target="_blank" rel="noopener">Unsafe Space</a> (GMTK 2024), <a href="https://flogram.itch.io/summon-and-chill" target="_blank" rel="noopener">Summon & Chill</a> (Ludum Dare 55), <a href="https://diandrakathyusha.itch.io/say-my-name" target="_blank" rel="noopener">Say My Name</a> (Global Game Jam 2026), Junction, Tournament Game Jam at Microsoft Flux, Pair Programming Competition in Code Golf, Elo Data Science Hackathon, Winter Game Jam.</li>
       <li><strong>Electronic music as <a href="https://linktr.ee/flogram" target="_blank" rel="noopener">Flogram</a> (2011 – Present):</strong> releases on streaming platforms, DJ gigs, plus audio design and atmospheric work that feeds into interactive projects.</li>
     </ul>
   </section>
