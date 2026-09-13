@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Emil Laine – Senior Full-Stack Developer, UI/UX & Visual Focus</title>
+<title>Emil Laine – Senior Full-Stack Developer, Generalist</title>
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -112,6 +112,7 @@
     font-weight: 400;
     color: #555;
   }
+  .tags { white-space: nowrap; }
   .job { margin-bottom: 18px; }
   .job:last-child { margin-bottom: 0; }
   .job-head {
@@ -138,6 +139,7 @@
     color: #111;
   }
   .date { font-size: 13px; color: #555; white-space: nowrap; }
+  ul { margin: 6px 0 0 18px; }
   li { margin-bottom: 3px; color: #222; line-height: 1.45; }
   li strong { color: #111; font-weight: 650; }
   .skills-list { list-style: none; margin: 0; }
@@ -146,7 +148,7 @@
   .flat-list { list-style: none; margin-left: 0; }
   .flat-list li { display: flex; gap: 28px; flex-wrap: wrap; }
 
-  .sub-client {
+  .sub-work {
     margin: 10px 0 0 0;
     padding: 10px 0 2px 0;
   }
@@ -175,9 +177,9 @@
   }
   .client-entry .entry-logo img.logo-epic { max-height: 36px; max-width: 40px; }
   .client-entry .entry-logo img.logo-rds { max-height: 34px; max-width: 34px; }
-  .client-entry .entry-logo img.logo-at { max-height: 34px; max-width: 34px; border-radius: 4px; }
+  .client-entry .entry-logo img.logo-at { max-height: 34px; max-width: 36px; border-radius: 4px; }
   .client-entry .entry-logo img.logo-kone { max-height: 18px; max-width: 48px; }
-  .client-entry .entry-title { font-size: 14px; color: #111; }
+  .entry-title { font-size: 14px; color: #111; }
   .client-entry p { font-size: 13.8px; line-height: 1.5; color: #222; margin-top: 1px; }
 
   .toolbar {
@@ -233,7 +235,7 @@
     <div class="header-row">
       <div class="header-main">
         <h1>Emil Laine</h1>
-        <div class="role">Senior Full-Stack Developer, Generalist — UI/UX & Visual Focus</div>
+        <div class="role">Senior Full-Stack Developer, Generalist – end-to-end <span style="white-space:nowrap">product engineering</span></div>
         <div class="contact">
           Arabianranta, Helsinki · +358 45 652 9227 · <a href="mailto:laine.emil@gmail.com">laine.emil@gmail.com</a>
           <div class="contact-links">
@@ -260,9 +262,8 @@
     </div>
     <p class="summary">
       12 years of software development experience, including 7 years in software consultancy building full-stack products with multidisciplinary teams.
-      Specialized in React, TypeScript, and Node.js product engineering.
-      Past clients include Epic Games, Adidas, and KONE.
-      I do my best work where engineering meets UI/UX and visuals — design systems, interfaces, game graphics, and developer UX such as language design and tooling.
+      Past clients include Epic Games and KONE.
+      I do my best work where engineering meets UI/UX and visuals: design systems, interfaces, game graphics, and developer UX such as language design and tooling.
       I'm a strong written communicator, and I thrive in async-first teams or solo.
       I work in deep focus with strong attention to detail, whether that means owning a whole product or going deep on my part of a larger team.
     </p>
@@ -294,9 +295,9 @@
       </div>
       <ul>
         <li>Delivered <strong>full-stack web applications</strong> (React, Node.js, TypeScript, PostgreSQL) in client-embedded, multidisciplinary teams.</li>
-        <li>Gravitate toward <strong>UI-heavy, visual work</strong> — polished, accessible features with designers; raised quality via <strong>testing, reviews, and shared practices</strong>.</li>
+        <li>Gravitate toward <strong>UI-heavy, visual work</strong> – polished, accessible features with designers; raised quality via <strong>testing, reviews, and shared practices</strong>.</li>
       </ul>
-      <div class="sub-client">
+      <div class="sub-work">
         <h3>Selected client work</h3>
         <div class="client-entry">
           <span class="entry-logo"><img class="logo-epic" src="logos/epic-games.svg" alt="Epic Games logo" title="Epic Games" /></span>
@@ -323,36 +324,24 @@
           <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
           <div>
             <div class="entry-title"><strong>KONE Care Contract sales tool</strong> <span class="meta">(2019)</span></div>
-            <p>Global maintenance-contract tool in 30+ countries; joined the USA/Canada rollout implementing new requirements, incl. a business-rules UI for the offer wizard. <span class="meta">React, Node.js, TypeScript, PostgreSQL</span></p>
+            <p>Global maintenance-contract tool in 30+ countries; joined the USA/Canada rollout implementing new requirements, incl. a business-rules UI for the offer wizard. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
           <div>
             <div class="entry-title"><strong>KONE Residential Flow sales tool</strong> <span class="meta">(2018 – 2019)</span></div>
-            <p>Sales tool in 20+ countries; auto-generated sales PDFs; owned technical handover to the follow-up team. <span class="meta">React, Node.js, TypeScript, PostgreSQL</span></p>
+            <p>Sales tool rolled out in 20+ countries with extensive localization; auto-generated sales PDFs; owned technical handover to the follow-up team. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"><img src="logos/adidas.svg" alt="Adidas logo" title="Adidas" /></span>
           <div>
             <div class="entry-title"><strong>Adidas Glass</strong> <span class="meta">(2017)</span></div>
-            <p>Part of the React rewrite of the adidas global site; implemented components for the new responsive, accessible landing page (e.g. carousels) with designers. <span class="meta">React</span></p>
+            <p>Part of the React rewrite of the adidas global site; implemented components for the new responsive, accessible landing page (e.g. carousels) with designers. <span class="meta tags">React</span></p>
           </div>
         </div>
       </div>
-    </div>
-
-    <div class="job">
-      <div class="job-head">
-        <h3>Independent – Game Developer</h3>
-        <span class="date">2024 – Present</span>
-      </div>
-      <ul>
-        <li>Full-time focus on <strong>game development</strong>: game design, graphics, and shipping playable work.</li>
-        <li>Shipped <strong>multiple prototypes with playtests</strong> across Unity, Unreal Engine 5, and Godot – concept to build, end to end.</li>
-        <li>Studied <strong>game graphics</strong>: pixel art and 3D (Blender), shaders (GLSL/HLSL, Material/Shader Graph), procedural content (UE5 PCG, geometry nodes).</li>
-      </ul>
     </div>
 
     <div class="job">
@@ -364,7 +353,7 @@
         <span class="date">2020</span>
       </div>
       <ul>
-        <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta">Node.js, Mux, MongoDB</span></li>
+        <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta tags">Node.js, Mux, MongoDB</span></li>
         <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket management, website, and mobile app.</li>
         <li>Also contributed to <strong>Radio Helsinki</strong> web features (operated by the same owner).</li>
       </ul>
@@ -372,17 +361,26 @@
   </section>
 
   <section>
-    <h2>Selected projects</h2>
+    <h2>Independent work</h2>
 
     <div class="job">
       <div class="job-head">
-        <h3>Alchemist – systemic roguelike <span class="meta">(private project)</span></h3>
-        <span class="date">Godot, C#</span>
+        <h3>Game Developer</h3>
+        <span class="date">2024 – Present</span>
       </div>
       <ul>
-        <li>2D pixel-art systemic roguelike with <strong>emergent mechanics</strong> and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests.</li>
-        <li>Developed with a <strong>multi-agent workflow</strong>: living spec docs, parallel implementation, review-led quality.</li>
+        <li>Full-time focus on <strong>game development</strong>: game design, graphics, and shipping playable work.</li>
+        <li>Shipped <strong>multiple prototypes with playtests</strong> across Unity, Unreal Engine 5, and Godot – concept to build, end to end.</li>
+        <li>Studied <strong>game graphics</strong>: pixel art and 3D (Blender), shaders (GLSL/HLSL, Material/Shader Graph), procedural content (UE5 PCG, geometry nodes).</li>
       </ul>
+      <div class="sub-work">
+        <h3>Selected game work</h3>
+        <div class="entry-title"><strong>Alchemist – systemic roguelike</strong> <span class="meta">Godot, C# (private project)</span></div>
+        <ul>
+          <li>2D pixel-art systemic roguelike with <strong>emergent mechanics</strong> and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests.</li>
+          <li>Developed with a <strong>multi-agent workflow</strong>: living spec docs, parallel implementation, review-led quality.</li>
+        </ul>
+      </div>
     </div>
 
     <div class="job">
