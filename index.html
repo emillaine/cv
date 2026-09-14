@@ -3,7 +3,13 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Emil Laine – Senior Full-Stack Developer, Generalist</title>
+<title>Emil Laine – Senior Full-Stack Developer</title>
+<meta name="description" content="Emil Laine – Senior Full-Stack Developer building full-stack products with React, TypeScript, Node.js, and PostgreSQL. Ex-Reaktor consultant, Helsinki." />
+<link rel="icon" href="favicon.png" type="image/png" />
+<meta property="og:title" content="Emil Laine – Senior Full-Stack Developer" />
+<meta property="og:description" content="Senior Full-Stack Developer building full-stack products with React, TypeScript, Node.js, and PostgreSQL. Ex-Reaktor consultant, Helsinki." />
+<meta property="og:type" content="profile" />
+<meta property="og:image" content="portrait.jpg" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
@@ -39,17 +45,19 @@
     line-height: 1.15;
   }
   .role {
-    margin-top: 2px;
+    margin-top: 6px;
     font-size: 15px;
+    line-height: 1.5;
     color: #333;
   }
   .contact {
-    margin-top: 10px;
+    margin-top: 8px;
     font-size: 13.5px;
+    line-height: 1.5;
     color: #333;
   }
   .contact-links {
-    margin-top: 6px;
+    margin-top: 8px;
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
@@ -112,8 +120,12 @@
     font-weight: 400;
     color: #555;
   }
-  .tags { white-space: nowrap; }
+  .client-entry > div { min-width: 0; }
+  .client-entry p, li, .entry-title { overflow-wrap: break-word; }
+  .tags { display: block; margin-top: 3px; }
+  img { max-width: 100%; }
   .job { margin-bottom: 18px; }
+  #independent .job { margin-bottom: 0; }
   .job:last-child { margin-bottom: 0; }
   .job-head {
     display: flex;
@@ -149,9 +161,10 @@
   .flat-list li { display: flex; gap: 28px; flex-wrap: wrap; }
 
   .sub-work {
-    margin: 10px 0 0 0;
-    padding: 10px 0 2px 0;
+    margin: 8px 0 0 0;
+    padding: 8px 0 0 0;
   }
+  .sub-work > .entry:first-child { margin-top: 4px; }
   .client-entry {
     display: flex;
     gap: 12px;
@@ -180,7 +193,10 @@
   .client-entry .entry-logo img.logo-at { max-height: 34px; max-width: 36px; border-radius: 4px; }
   .client-entry .entry-logo img.logo-kone { max-height: 18px; max-width: 48px; }
   .entry-title { font-size: 14px; color: #111; }
-  .sub-work > .entry-title { margin-top: 12px; }
+  .entry { margin-top: 12px; }
+  .sub-work > .entry:first-child { margin-top: 4px; }
+  .entry p { color: #222; line-height: 1.45; }
+  .entry > .entry-title + p { margin-top: 1px; }
   .sub-work > .entry-title + ul { margin-top: 3px; }
   .client-entry p { font-size: 13.8px; line-height: 1.5; color: #222; margin-top: 1px; }
 
@@ -216,13 +232,23 @@
     }
   }
   /* Print: A4 with page margins. Disable browser headers/footers in the print dialog. */
-  @page { size: A4; margin: 13mm 12mm; }
+  @page { size: A4; margin: 10mm; }
   @media print {
     .toolbar { display: none; }
+    #experience { break-before: page; }
     .page { padding: 0; max-width: none; }
+    body { font-size: 12.5px; }
+    .meta { font-size: 12px; }
+    .entry-title { font-size: 13px; }
+    section { margin-bottom: 18px; }
+    .job { margin-bottom: 12px; break-inside: auto; }
+    header { break-inside: avoid; }
+    .client-entry, .entry, li { break-inside: avoid; }
     a[href]:after { content: none !important; }
     h2, h3 { break-after: avoid; }
-    header, .job, li { break-inside: avoid; }
+    .entry-title { break-after: avoid; }
+    h2 { margin-bottom: 8px; }
+    ul { margin-top: 4px; }
   }
 </style>
 </head>
@@ -237,9 +263,9 @@
     <div class="header-row">
       <div class="header-main">
         <h1>Emil Laine</h1>
-        <div class="role">Senior Full-Stack Developer, Generalist – end-to-end <span style="white-space:nowrap">product engineering</span></div>
+        <div class="role">Senior Full-Stack Developer – <span style="white-space:nowrap">end-to-end product engineering</span></div>
         <div class="contact">
-          Arabianranta, Helsinki · +358 45 652 9227 · <a href="mailto:laine.emil@gmail.com">laine.emil@gmail.com</a>
+          Helsinki, Finland · remote and on-site · <a href="mailto:laine.emil@gmail.com">laine.emil@gmail.com</a>
           <div class="contact-links">
             <a class="icon-link" href="https://github.com/emillaine" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
@@ -259,29 +285,30 @@
       <img class="portrait-img" src="portrait.jpg" alt="Portrait of Emil Laine" onerror="this.style.display='none'" />
     </div>
     <p class="summary">
-      12 years of software development experience, including 7 years in software consultancy building full-stack products with multidisciplinary teams.
-      Past clients include Epic Games and KONE.
-      I do my best work where engineering meets UI/UX and visuals: design systems, interfaces, game graphics, and developer UX such as language design and tooling.
-      I'm a strong written communicator, and I thrive in async-first teams or solo.
-      I work in deep focus with strong attention to detail, whether that means owning a whole product or going deep on my part of a larger team.
+      <span id="exp-years">12 years</span> of software development experience, including 7 years in software consultancy at Reaktor building full-stack products with multidisciplinary teams for international clients.
     </p>
     <p class="summary">
-      I prefer to focus my own time on architecture, design, specs, reviews, and keeping quality high, while delegating routine implementation to AI coding agents – writing code myself where it matters most: tricky debugging, performance, and critical parts.
+      I do my best work where engineering meets UI/UX and visuals: design systems, interfaces, game graphics, and developer UX such as language design and tooling.
+      I'm a strong written communicator, and I thrive in async-first teams or solo.
+      I work in deep focus with strong attention to detail, whether that means being responsible for a whole product end to end or going deep on my part of a larger team.
+    </p>
+    <p class="summary">
+      I focus on architecture, design, specs, reviews, and quality, with AI coding agents handling implementation, staying hands-on where depth is needed.
     </p>
   </header>
 
   <section>
     <h2>Skills</h2>
     <ul class="skills-list">
-      <li><span class="label">Product engineering:</span> React, TypeScript, Node.js, PostgreSQL – full-stack apps from discovery to handover, incl. global rollouts (30+ countries) and agency takeovers</li>
-      <li><span class="label">UI/UX, design systems & visuals:</span> component libraries, data visualization, accessibility, screen readers, CMS-driven sites, SCSS; game graphics, shaders, procedural content; language design and developer UX</li>
-      <li><span class="label">Game development:</span> Unity, Unreal Engine 5 (incl. Blueprints), Godot, C# – playable prototypes with playtests, from concept to build</li>
+      <li><span class="label">Product engineering:</span> full-stack apps; most experienced with React, TypeScript, Node.js, and PostgreSQL – including international production apps and complete rewrites</li>
+      <li><span class="label">UI/UX, design systems, visuals:</span> component libraries, data visualization, accessibility, screen readers, CMS-driven sites, CSS/SCSS/Less, CSS-in-JS (styled-components); game graphics, shaders, procedural content; language design and developer UX</li>
+      <li><span class="label">Game development:</span> from concept to playtest to release with Unity, Unreal Engine 5 (including Blueprints), and Godot; C#, C++, Rust, and custom 2D game engines</li>
       <li><span class="label">Systems programming:</span> C/C++, compilers (LLVM)</li>
-      <li><span class="label">Delivery &amp; collaboration:</span> embedded client teams, Agile (Kanban, Scrum), testing &amp; CI (Jest), code reviews, knowledge transfer</li>
+      <li><span class="label">Delivery &amp; collaboration:</span> embedded client teams, Agile (Kanban, Scrum), testing, CI/CD, code reviews, knowledge transfer, AI-assisted delivery (specs, parallel implementation, review-led quality)</li>
     </ul>
   </section>
 
-  <section>
+  <section id="experience">
     <h2>Experience</h2>
 
     <div class="job">
@@ -290,61 +317,61 @@
           <img class="logo-img" src="logos/reaktor.jpg" alt="Reaktor logo" title="Reaktor" />
           <h3>Reaktor – Software Developer, Consultant</h3>
         </div>
-        <span class="date">2017 – 2024</span>
+        <span class="date">2017 – 2019, 2021 – 2024</span>
       </div>
       <ul>
         <li>Delivered <strong>full-stack web applications</strong> (React, Node.js, TypeScript, PostgreSQL) in client-embedded, multidisciplinary teams.</li>
-        <li>Gravitate toward <strong>UI-heavy, visual work</strong> – polished, accessible features with designers; raised quality via <strong>testing, reviews, and shared practices</strong>.</li>
+        <li>Focused on <strong>UI-heavy, visual work</strong> – polished, accessible features with designers; raised quality via <strong>testing, reviews, and shared practices</strong>.</li>
       </ul>
       <div class="sub-work">
         <h3>Selected client work</h3>
         <div class="client-entry">
           <span class="entry-logo"><img class="logo-epic" src="logos/epic-games.svg" alt="Epic Games logo" title="Epic Games" /></span>
           <div>
-            <div class="entry-title"><strong>Epic Games, Design Systems</strong> <span class="meta">– Senior Software Developer (2021 – 2024)</span></div>
-            <p>Shipped a cross-team React design system (components, icons, data-viz) for consistency, performance and accessibility; contributed to the parental PIN feature on consoles (Fortnite, Fall Guys, Rocket League). <span class="meta tags">React, TypeScript, Design systems, Design tokens, Data visualization, Accessibility</span></p>
+            <div class="entry-title"><strong>Epic Games – Design Systems, Senior Software Developer</strong> <span class="meta">(2021 – 2024)</span></div>
+            <p>Built a cross-team React design system (components, icons, data-viz) replacing the previous MUI-based libraries with a lighter-weight system, adopted by three teams before its 1.0 release, with a focus on consistency, performance, and accessibility (screen-reader support, contrast work with designers); contributed to social overlay features such as parental PIN, shipped in Epic Games titles including Fortnite, Fall Guys, and Rocket League. <span class="meta tags">React, TypeScript, CSS, Design tokens, Data visualization, Accessibility, Snapshot testing, UI/UX</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"><img class="logo-at" src="logos/another-tomorrow.jpg" alt="Another Tomorrow logo" title="Another Tomorrow" /></span>
           <div>
             <div class="entry-title"><strong>Another Tomorrow – full site rewrite</strong> <span class="meta">(2021)</span></div>
-            <p>Full rewrite of AnotherTomorrow.co after taking over from another agency; from Vue/Nuxt + Shopify to React/Gatsby + Contentful on the Chord sales platform, including the new landing page.</p>
+            <p>In a two-developer team, shipped the full rewrite of AnotherTomorrow.co under a tight deadline – from Vue/Nuxt + Shopify to React/Gatsby + Contentful on the Chord sales platform, including the new landing page, where I focused on frontend. <span class="meta tags">React, TypeScript, Gatsby, Contentful, CSS, UI</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"><img class="logo-rds" src="logos/reaktor-defsec.png" alt="Reaktor Defence and Security logo" title="Reaktor Defence & Security" /></span>
           <div>
             <div class="entry-title"><strong>Reaktor Defence & Security</strong> <span class="meta">(2021)</span></div>
-            <p>Full-stack development; details confidential due to client constraints.</p>
+            <p>Full-stack development; details confidential due to client constraints. <span class="meta tags">React, Node.js, TypeScript, CSS</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
           <div>
             <div class="entry-title"><strong>KONE Care Contract sales tool</strong> <span class="meta">(2019)</span></div>
-            <p>Global maintenance-contract tool in 30+ countries; joined the USA/Canada rollout implementing new requirements, incl. a business-rules UI for the offer wizard. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL</span></p>
+            <p>Global maintenance-contract tool in 30+ countries; joined the USA/Canada rollout implementing new requirements, including a business-rules UI for the offer wizard. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL, CSS</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
           <div>
             <div class="entry-title"><strong>KONE Residential Flow sales tool</strong> <span class="meta">(2018 – 2019)</span></div>
-            <p>Sales tool rolled out in 20+ countries with extensive localization; auto-generated sales PDFs; owned technical handover to the follow-up team. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL</span></p>
+            <p>Sales tool rolled out in 20+ countries with extensive localization; auto-generated sales PDFs; Salesforce integration work; handled technical handover to the follow-up team. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL, CSS, Salesforce</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"><img src="logos/adidas.svg" alt="Adidas logo" title="Adidas" /></span>
           <div>
-            <div class="entry-title"><strong>Adidas Glass</strong> <span class="meta">(2017)</span></div>
-            <p>Part of the React rewrite of the adidas global site; implemented components for the new responsive, accessible landing page (e.g. carousels) with designers. <span class="meta tags">React</span></p>
+            <div class="entry-title"><strong>Adidas Glass</strong> <span class="meta">(summer 2017)</span></div>
+            <p>Contributed to the React rewrite of the adidas global site; implemented responsive, accessible front-page components. <span class="meta tags">React, TypeScript, CSS, UI</span></p>
           </div>
         </div>
         <div class="client-entry">
           <span class="entry-logo"></span>
           <div>
             <div class="entry-title"><strong>Reaktor internal projects</strong></div>
-            <p>Reaktor Hunt coding puzzle game for recruiting; meeting-room system with facial-recognition lobby screen; Guidebook offline-first PWA from prototype to MVP; internal Events app, incl. calendar UI. <span class="meta tags">Go, WebAssembly, TypeScript, React, Node.js, PWA, UI/UX</span></p>
+            <p>Reaktor Hunt coding puzzle game for recruiting; meeting-room system with facial-recognition lobby screen; Guidebook offline-first PWA from prototype to MVP. <span class="meta tags">Go, WebAssembly, TypeScript, React, Node.js, CSS, PWA, UI/UX</span></p>
           </div>
         </div>
       </div>
@@ -360,13 +387,13 @@
       </div>
       <ul>
         <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta tags">Node.js, Flow, Mux, MongoDB</span></li>
-        <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket, product/inventory, and customer/employee management, plus website and mobile app.</li>
+        <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket, product/inventory, customer/employee management, and the website.</li>
         <li>Also contributed to <strong>Radio Helsinki</strong> web features (operated by the same owner).</li>
       </ul>
     </div>
   </section>
 
-  <section>
+  <section id="independent">
     <h2>Independent work</h2>
 
     <div class="job">
@@ -375,40 +402,34 @@
         <span class="date">2024 – Present</span>
       </div>
       <ul>
-        <li>Full-time focus on <strong>game development</strong>: game design, graphics, and shipping playable work.</li>
+        <li>Full-time focus on <strong>game development</strong>: game design, graphics, and playable prototypes.</li>
         <li>Shipped <strong>multiple prototypes with playtests</strong> across Unity, Unreal Engine 5, and Godot – concept to build, end to end.</li>
         <li>Studied <strong>game graphics</strong>: pixel art and 3D (Blender), shaders (GLSL/HLSL, Material/Shader Graph), procedural content (UE5 PCG, geometry nodes).</li>
       </ul>
       <div class="sub-work">
-        <h3>Selected game work</h3>
-        <div class="entry-title"><strong>Alchemist – systemic roguelike</strong> <span class="meta">Godot, C#</span></div>
-        <ul>
-          <li>2D pixel-art systemic roguelike with <strong>emergent mechanics</strong> and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests.</li>
-          <li>Developed with a <strong>multi-agent workflow</strong>: living spec docs, parallel implementation, review-led quality.</li>
-        </ul>
-        <div class="entry-title"><strong>Kaiku – first-person exploration game</strong> <span class="meta">Unreal Engine 5</span></div>
-        <ul>
-          <li>Whole world generated at design time using <strong>UE5 PCG graphs operating on hand-drawn splines in 3D space</strong> to carve mountains, forests, paths, different biomes, lakes, bridges, etc.</li>
-        </ul>
-        <div class="entry-title"><strong><a href="https://flogram.itch.io/untitled-puzzle-game" target="_blank" rel="noopener">The Observer Effect – first-person puzzle game</a></strong> <span class="meta">Unreal Engine 5</span></div>
-        <ul>
-          <li><strong>Perspective puzzles</strong> – interact with hidden shapes embedded in the environment when looking at the right angle.</li>
-        </ul>
+        <div class="entry">
+        <div class="entry-title"><strong>Alchemist – roguelike game</strong> <span class="meta">(2026)</span></div>
+        <p>2D pixel-art roguelike with emergent mechanics and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests. <span class="meta tags">Godot, C#, Pixel art, Audio integration, AI-assisted development</span></p>
+        </div>
+        <div class="entry">
+        <div class="entry-title"><strong>Kaiku – first-person exploration game</strong> <span class="meta">(2026)</span></div>
+        <p>Whole world generated at design time using UE5 PCG graphs operating on hand-drawn splines in 3D space to carve mountains, forests, paths, different biomes, lakes, bridges, etc. <span class="meta tags">Unreal Engine 5, Tech art, 3D modeling, Shaders, Procedural content generation</span></p>
+        </div>
+        <div class="entry">
+        <div class="entry-title"><strong>The Observer Effect – first-person puzzle game</strong> <span class="meta">(2024 – 2026)</span></div>
+        <p>Perspective puzzles – interact with hidden shapes embedded in the environment when looking at the right angle. <span class="meta tags">Unreal Engine 5, Tech art, Shaders, Gameplay systems, Puzzle design</span></p>
+        </div>
       </div>
     </div>
 
-    <div class="sub-work">
-      <h3>Selected systems work</h3>
-      <div class="entry-title"><strong><a href="https://github.com/emillaine/cx" target="_blank" rel="noopener">C* – systems programming language</a></strong> <span class="meta">2017 – 2021 · C++, LLVM/Clang · 144 ★</span></div>
-      <ul>
-        <li>Designed and built a <strong>modern systems language for performance + productivity</strong> with attention to syntax and developer UX: compiler, test suite, <a href="https://emillaine.github.io/cx-language.github.io/" target="_blank" rel="noopener">project site</a>.</li>
-        <li>End-to-end ownership of <strong>architecture, tooling, and iterative delivery</strong> over multiple years.</li>
-      </ul>
-      <div class="entry-title"><strong><a href="https://github.com/emillaine/ts-llvm" target="_blank" rel="noopener">ts-llvm – TypeScript to LLVM compiler</a></strong> <span class="meta">2018 · TypeScript, C++, LLVM · 293 ★</span></div>
-      <ul>
-        <li>Compiles strictly-typed TypeScript to LLVM IR via the <strong>TypeScript Compiler API</strong>, targeting native code / WebAssembly, with a small C++ runtime for built-in APIs.</li>
-      </ul>
-    </div>
+      <div class="entry">
+      <div class="entry-title"><strong>C* – systems programming language</strong> <span class="meta">(2017 – 2021)</span></div>
+      <p>Designed and built a modern systems language for performance + productivity with attention to syntax and developer UX: compiler, test suite, <a href="https://emillaine.github.io/cx-language.github.io/" target="_blank" rel="noopener">project site</a>. <span class="meta tags">C++, LLVM/Clang · <span data-stars="emillaine/cx">144 ★</span></span></p>
+      </div>
+      <div class="entry">
+      <div class="entry-title"><strong>ts-llvm – TypeScript to LLVM compiler</strong> <span class="meta">(2018)</span></div>
+      <p>Compiles strictly-typed TypeScript to LLVM IR via the TypeScript Compiler API, targeting native code / WebAssembly, with a small C++ runtime for built-in APIs. <span class="meta tags">TypeScript, C++, LLVM · <span data-stars="emillaine/ts-llvm">293 ★</span></span></p>
+      </div>
   </section>
 
   <section>
@@ -421,22 +442,55 @@
   <section>
     <h2>Education</h2>
     <ul>
-      <li><strong>Computer Science, University of Helsinki</strong> <span class="meta">– 2015 – 2018</span><br /><span class="meta">Focus: full-stack web dev, programming languages, compilers, game dev</span></li>
-      <li><strong>Vocational studies in 3D Game Graphics – Stadin AO</strong> <span class="meta">– 2026</span><br /><span class="meta"><span style="white-space:nowrap">3D modeling/texturing</span> and a team game project as project and tech-art lead</span></li>
+      <li><strong>Computer Science studies, University of Helsinki</strong> <span class="meta">(2015 – 2018)</span><br /><span class="meta">Focus: full-stack web dev, programming languages, compilers, game dev</span></li>
+      <li><strong>3D Game Graphics studies, Helsinki Vocational College (Stadin AO)</strong> <span class="meta">(2026)</span><br /><span class="meta"><span style="white-space:nowrap">3D modeling/texturing</span> and a team game project as project and tech-art lead</span></li>
     </ul>
   </section>
 
   <section>
     <h2>Additional</h2>
     <ul>
-      <li><strong><a href="https://stackoverflow.com/users/3425536/flogram-dev" target="_blank" rel="noopener">Stack Overflow</a></strong> – 43k reputation from 917 answers, 4.0M people reached. 8 gold badges incl. C++, top tag in C.</li>
+      <li><strong><a href="https://stackoverflow.com/users/3425536/flogram-dev" target="_blank" rel="noopener">Stack Overflow</a></strong> – 43k reputation, 917 answers, 4.0M people reached. 8 gold badges incl. C++.</li>
       <li><strong>Open source</strong> – experience contributing to and maintaining open-source projects.</li>
-      <li><strong>Hackathons & game jams</strong> – <a href="https://flogram.itch.io/unsafe-space" target="_blank" rel="noopener">Unsafe Space</a> (GMTK 2024), <a href="https://flogram.itch.io/summon-and-chill" target="_blank" rel="noopener">Summon & Chill</a> (Ludum Dare 55), <a href="https://diandrakathyusha.itch.io/say-my-name" target="_blank" rel="noopener">Say My Name</a> (Global Game Jam 2026), Junction, Tournament Game Jam at Microsoft Flux, Pair Programming Competition in Code Golf, Elo Data Science Hackathon, Winter Game Jam.</li>
-      <li><strong>Electronic music as <a href="https://linktr.ee/flogram" target="_blank" rel="noopener">Flogram</a> (2011 – Present):</strong> releases on streaming platforms, DJ gigs, plus audio design and atmospheric work that feeds into interactive projects.</li>
+      <li><strong>Hackathons & game jams</strong> – <a href="https://diandrakathyusha.itch.io/say-my-name" target="_blank" rel="noopener">Global Game Jam 2026</a>, <a href="https://flogram.itch.io/unsafe-space" target="_blank" rel="noopener">GMTK 2024</a>, <a href="https://flogram.itch.io/summon-and-chill" target="_blank" rel="noopener">Ludum Dare 55</a>, Junction 2018, Tournament Game Jam at Microsoft Flux, Elo Data Science Hackathon.</li>
+      <li><strong>Electronic music as <a href="https://linktr.ee/flogram" target="_blank" rel="noopener">Flogram</a> (2011 – Present):</strong> releases on streaming platforms, DJ gigs, audio design, and atmospheric work for interactive projects.</li>
     </ul>
   </section>
 
 </div>
+
+<script>
+// Years of experience: full years since March 2014, with static fallback above.
+(function () {
+  var el = document.getElementById('exp-years');
+  if (!el) return;
+  var start = new Date(2014, 2, 1);
+  var now = new Date();
+  var years = now.getFullYear() - start.getFullYear();
+  if (now.getMonth() < start.getMonth() ||
+      (now.getMonth() === start.getMonth() && now.getDate() < start.getDate())) {
+    years--;
+  }
+  el.textContent = years + ' years';
+})();
+
+// GitHub stars: live count with static fallback already in the HTML.
+(function () {
+  var nodes = document.querySelectorAll('[data-stars]');
+  if (!nodes.length) return;
+  nodes.forEach(function (node) {
+    var repo = node.getAttribute('data-stars');
+    fetch('https://api.github.com/repos/' + repo)
+      .then(function (res) { return res.ok ? res.json() : null; })
+      .then(function (data) {
+        if (data && typeof data.stargazers_count === 'number') {
+          node.textContent = data.stargazers_count + ' \u2605';
+        }
+      })
+      .catch(function () { /* keep fallback */ });
+  });
+})();
+</script>
 
 </body>
 </html>
