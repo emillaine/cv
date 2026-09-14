@@ -150,6 +150,8 @@
     font-weight: 800;
     color: #111;
   }
+  img[src$="glivelab.svg"].logo-img { height: 33px; }
+  img[src$="reaktor.jpg"].logo-img { height: 30px; }
   .date { font-size: 13px; color: #555; white-space: nowrap; }
   ul { margin: 6px 0 0 18px; }
   li { margin-bottom: 3px; color: #222; line-height: 1.45; }
@@ -229,6 +231,41 @@
       max-width: none;
       margin: 0;
       align-self: flex-start;
+    }
+  }
+  :root { color-scheme: light dark; }
+  /* Dark mode (screen only – print stays light). */
+  @media screen and (prefers-color-scheme: dark) {
+    body { background: #16181d; color: #e8e8e8; }
+    .page { background: #16181d; }
+    a { color: #e8e8e8; text-decoration-color: #666; }
+    a:hover { text-decoration-color: #e8e8e8; }
+    h1 { color: #f0f0f0; }
+    .role, .contact { color: #b5b5b5; }
+    .icon-link { color: #e8e8e8; border-bottom-color: #555; }
+    .icon-link:hover { border-bottom-color: #e8e8e8; }
+    .icon-link svg { fill: #e8e8e8; }
+    .summary { color: #cfcfcf; }
+    h2 { color: #f0f0f0; border-bottom-color: #3a3f47; }
+    h3 { color: #f0f0f0; }
+    .meta, .date { color: #9a9a9a; }
+    li { color: #cfcfcf; }
+    li strong { color: #f0f0f0; }
+    .skills-list span.label { color: #f0f0f0; }
+    .entry-title { color: #f0f0f0; }
+    .client-entry p { color: #cfcfcf; }
+    .entry p { color: #cfcfcf; }
+    .logo-img { color: #e8e8e8; }
+    /* Uniform dark vector marks collapse to pure white (exact under any gamma). */
+    .client-entry .entry-logo img[src$="adidas.svg"], .client-entry .entry-logo img[src$="glivelab.svg"], img[src$="glivelab.svg"].logo-img { filter: brightness(0) invert(1); opacity: 0.94; }
+    /* Two-tone vector marks invert, then clip brights to white (dark details stay dark). */
+    .client-entry .entry-logo img[src$="kone.svg"], .client-entry .entry-logo img[src$="epic-games.svg"] { filter: invert(1) brightness(2); opacity: 0.94; }
+    /* Opaque black-on-white marks invert, then black drops out via screen blending. */
+    .logo-img, .client-entry .entry-logo img[src$=".jpg"], .client-entry .entry-logo img[src$=".png"] { filter: invert(1) contrast(2); mix-blend-mode: screen; opacity: 0.94; }
+    .toolbar button {
+      border-color: #3a3f47;
+      background: #1e2229;
+      color: #e8e8e8;
     }
   }
   /* Print: A4 with page margins. Disable browser headers/footers in the print dialog. */
