@@ -49,7 +49,7 @@
     display: flex;
     justify-content: flex-end;
   }
-  .toolbar button {
+  .toolbar a {
     font: inherit;
     font-size: 13px;
     padding: 6px 14px;
@@ -58,6 +58,7 @@
     color: var(--ink);
     border-radius: 6px;
     cursor: pointer;
+    text-decoration: none;
   }
   .page {
     max-width: 800px;
@@ -303,7 +304,7 @@
 <body>
 
 <div class="toolbar">
-  <button onclick="window.print()">Print / Save as PDF</button>
+  <a href="Emil%20Laine%20CV.pdf" download="Emil Laine CV.pdf">Download PDF</a>
 </div>
 
 <div class="page">
