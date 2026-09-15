@@ -6,208 +6,46 @@
 <title>Emil Laine – Senior Full-Stack Developer</title>
 <meta name="description" content="Emil Laine – Senior Full-Stack Developer building full-stack products with React, TypeScript, Node.js, and PostgreSQL. Ex-Reaktor consultant, Helsinki." />
 <link rel="icon" href="favicon.png" type="image/png" />
-<meta property="og:title" content="Emil Laine – Senior Full-Stack Developer" />
-<meta property="og:description" content="Senior Full-Stack Developer building full-stack products with React, TypeScript, Node.js, and PostgreSQL. Ex-Reaktor consultant, Helsinki." />
-<meta property="og:type" content="profile" />
-<meta property="og:image" content="portrait.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700&display=swap" rel="stylesheet" />
 <style>
+  :root {
+    color-scheme: light dark;
+    --body: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --title: "Inter Tight", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+    --bg: #fff;
+    --ink: #111;
+    --text: #222;
+    --soft: #444;
+    --meta: #5f5f5f;
+    --faint: #8a8a8a;
+    --rule: #d6d6d6;
+    --chip-bg: #f4f4f4;
+    --chip-bd: #e2e2e2;
+
+    /* Indentation per level of structure. Experience uses the wider step so logos can hang in it. */
+    --step: 52px;
+    --indent: 16px;
+    --mark: 38px;
+  }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-    background: #fff;
-    color: #111;
-    line-height: 1.6;
-    font-size: 14.5px;
-  }
-  a { color: #111; text-decoration-color: #999; text-underline-offset: 2px; }
-  a:hover { text-decoration-color: #111; }
-
-  .page {
-    max-width: 720px;
-    margin: 0 auto;
-    padding: 48px 32px;
-    background: #fff;
-  }
-  header { margin-bottom: 28px; }
-  .header-row {
-    position: relative;
-    display: flex;
-    gap: 24px;
-    align-items: flex-start;
-    justify-content: space-between;
-  }
-  .header-main { flex: 1; min-width: 0; padding-right: 190px; }
-  h1 {
-    font-size: 34px;
-    font-weight: 700;
-    letter-spacing: -0.3px;
-    color: #111;
-    line-height: 1.15;
-  }
-  .role {
-    margin-top: 6px;
+    font-family: var(--body);
+    background: var(--bg);
+    color: var(--ink);
     font-size: 15px;
-    line-height: 1.5;
-    color: #333;
+    line-height: 1.6;
   }
-  .contact {
-    margin-top: 8px;
-    font-size: 13.5px;
-    line-height: 1.5;
-    color: #333;
-  }
-  .contact-links {
-    margin-top: 8px;
-    display: flex;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-  .icon-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    color: #111;
-    text-decoration: none;
-    border-bottom: 1px solid #bbb;
-    padding-bottom: 1px;
-    font-weight: 600;
-    font-size: 13px;
-  }
-  .icon-link:hover { border-bottom-color: #111; }
-  .icon-link svg { width: 14px; height: 14px; fill: #111; flex: 0 0 14px; }
-  .summary {
-    margin-top: 12px;
-    font-size: 14.5px;
-    color: #222;
-    max-width: 65ch;
-  }
-  .summary + .summary { margin-top: 8px; }
-
-  .portrait-img {
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    margin-top: auto;
-    margin-bottom: auto;
-    height: 100%;
-    max-height: 166px;
-    width: auto;
-    max-width: 166px;
-    aspect-ratio: 1 / 1;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-  }
-
-  section { margin-bottom: 26px; }
-  h2 {
-    font-size: 22px;
-    font-weight: 700;
-    color: #111;
-    border-bottom: 1px solid #d1d1d1;
-    padding-bottom: 6px;
-    margin-bottom: 12px;
-  }
-  h3 {
-    font-size: 16px;
-    font-weight: 700;
-    color: #111;
-    line-height: 1.35;
-  }
-  .meta {
-    font-size: 13px;
-    font-weight: 400;
-    color: #555;
-  }
-  .client-entry > div { min-width: 0; }
-  .client-entry p, li, .entry-title { overflow-wrap: break-word; }
-  .tags { display: block; margin-top: 3px; }
+  a { color: inherit; text-decoration-color: var(--faint); text-underline-offset: 2px; }
+  a:hover { text-decoration-color: currentColor; }
   img { max-width: 100%; }
-  .job { margin-bottom: 18px; }
-  #independent .job { margin-bottom: 0; }
-  .job:last-child { margin-bottom: 0; }
-  .job-head {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .company {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .logo-img {
-    height: 28px;
-    width: auto;
-    max-width: 110px;
-    object-fit: contain;
-    padding: 2px 4px 2px 0;
-    display: block;
-    font-size: 12px;
-    font-weight: 800;
-    color: #111;
-  }
-  img[src$="glivelab.svg"].logo-img { height: 33px; }
-  img[src$="reaktor.jpg"].logo-img { height: 30px; }
-  .date { font-size: 13px; color: #555; white-space: nowrap; }
-  ul { margin: 6px 0 0 18px; }
-  li { margin-bottom: 3px; color: #222; line-height: 1.45; }
-  li strong { color: #111; font-weight: 650; }
-  .skills-list { list-style: none; margin: 0; }
-  .skills-list li { margin-bottom: 5px; line-height: 1.45; }
-  .skills-list span.label { font-weight: 700; color: #111; }
-  .flat-list { list-style: none; margin-left: 0; }
-  .flat-list li { display: flex; gap: 28px; flex-wrap: wrap; }
-
-  .sub-work {
-    margin: 8px 0 0 0;
-    padding: 8px 0 0 0;
-  }
-  .sub-work > .entry:first-child { margin-top: 4px; }
-  .client-entry {
-    display: flex;
-    gap: 12px;
-    margin-top: 12px;
-    align-items: flex-start;
-  }
-  .client-entry .entry-logo {
-    flex: 0 0 56px;
-    width: 56px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 30px;
-    padding-top: 2px;
-  }
-  .client-entry .entry-logo img {
-    max-width: 56px;
-    max-height: 26px;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-    display: block;
-  }
-  .client-entry .entry-logo img.logo-epic { max-height: 36px; max-width: 40px; }
-  .client-entry .entry-logo img.logo-rds { max-height: 34px; max-width: 34px; }
-  .client-entry .entry-logo img.logo-at { max-height: 34px; max-width: 36px; border-radius: 4px; }
-  .client-entry .entry-logo img.logo-kone { max-height: 18px; max-width: 48px; }
-  .entry-title { font-size: 14px; color: #111; }
-  .entry-title a { color: inherit; text-decoration: none; }
-  .entry-title a:hover { text-decoration: underline; }
-  .entry { margin-top: 12px; }
-  .sub-work > .entry:first-child { margin-top: 4px; }
-  .entry p { color: #222; line-height: 1.45; }
-  .entry > .entry-title + p { margin-top: 1px; }
-  .sub-work > .entry-title + ul { margin-top: 3px; }
-  .client-entry p { font-size: 13.8px; line-height: 1.5; color: #222; margin-top: 1px; }
 
   .toolbar {
-    max-width: 720px;
+    max-width: 800px;
     margin: 0 auto;
-    padding: 12px 32px 0;
+    padding: 16px 32px 0;
     display: flex;
     justify-content: flex-end;
   }
@@ -215,79 +53,247 @@
     font: inherit;
     font-size: 13px;
     padding: 6px 14px;
-    border: 1px solid #d1d1d1;
-    background: #fff;
-    color: #111;
+    border: 1px solid var(--rule);
+    background: var(--bg);
+    color: var(--ink);
     border-radius: 6px;
     cursor: pointer;
   }
-  @media (max-width: 600px) {
-    .page { padding: 32px 20px; }
-    .header-row { flex-direction: column-reverse; }
-    .header-main { padding-right: 0; }
-    .portrait-img {
-      position: static;
-      height: 104px;
-      width: 104px;
-      max-height: none;
-      max-width: none;
-      margin: 0;
-      align-self: flex-start;
-    }
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 32px 32px 80px;
   }
-  :root { color-scheme: light dark; }
-  /* Dark mode (screen only – print stays light). */
+
+  /* ---------- Header ---------- */
+  .hero {
+    display: grid;
+    grid-template-columns: 128px 1fr;
+    column-gap: 32px;
+    align-items: center;
+  }
+  .portrait {
+    width: 128px;
+    height: 128px;
+    border-radius: 16px;
+    object-fit: cover;
+    display: block;
+  }
+  .identity { min-width: 0; }
+  h1 {
+    font-family: var(--title);
+    font-size: 36px;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+  }
+  .role {
+    margin-top: 10px;
+    font-size: 17px;
+    line-height: 1.4;
+    color: var(--meta);
+  }
+  .role b { font-weight: 600; color: var(--text); }
+  .contact-meta {
+    margin-top: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 22px;
+    font-size: 13.5px;
+    color: var(--soft);
+  }
+  .contact-meta > * { display: inline-flex; align-items: center; gap: 7px; }
+  .contact-meta svg { width: 14px; height: 14px; flex: 0 0 14px; stroke: var(--faint); fill: none; stroke-width: 1.7; }
+  .contact-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 8px; }
+  .icon-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 4px 11px 4px 9px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.4;
+    color: var(--ink);
+    text-decoration: none;
+    background: var(--chip-bg);
+    border: 1px solid var(--chip-bd);
+    border-radius: 7px;
+  }
+  .icon-link:hover { border-color: var(--faint); }
+  .icon-link svg { width: 14px; height: 14px; fill: currentColor; flex: 0 0 14px; }
+
+  .summary { margin-top: 36px; }
+  .summary p { color: var(--text); }
+  .summary p + p { margin-top: 12px; }
+  .summary .lead { font-size: 16px; line-height: 1.55; color: var(--ink); }
+
+  /* ---------- Sections ---------- */
+  section { margin-top: 32px; }
+  h2 {
+    font-family: var(--title);
+    font-size: 24px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0;
+    color: var(--ink);
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 22px;
+  }
+  /* Level 1: everything under a section title starts one step in. */
+  .l1 { padding-left: var(--indent); }
+  #experience { --indent: var(--step); }
+  .meta { font-size: 13.5px; font-weight: 400; color: var(--meta); }
+  .tags { display: block; margin-top: 4px; }
+  .date { font-size: 13.5px; color: var(--meta); white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+  /* Skills: bold run-in label, wrapped lines hang under the text. */
+  .skill { padding-left: 20px; text-indent: -20px; color: var(--text); }
+  .skill + .skill { margin-top: 10px; }
+  .skill b { font-weight: 700; color: var(--ink); }
+
+  /* Jobs and entries. The logo hangs to the left of its title, inside the step. */
+  .job, .entry { position: relative; }
+  .job + .job { margin-top: 40px; }
+  .mark {
+    position: absolute;
+    left: calc(-1 * var(--indent));
+    top: 0;
+    width: var(--mark);
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .mark img { display: block; width: auto; height: auto; max-width: var(--mark); max-height: 30px; object-fit: contain; }
+  .mark .logo-reaktor { max-height: 30px; }
+  .mark .logo-glivelab { max-height: 32px; }
+  .mark .logo-epic { max-height: 36px; max-width: 32px; }
+  .mark .logo-at { max-height: 26px; max-width: 38px; border-radius: 3px; }
+  .mark .logo-rds { max-height: 32px; max-width: 30px; }
+  .mark .logo-kone { max-height: 15px; max-width: 38px; }
+  .mark .logo-adidas { max-height: 26px; max-width: 34px; }
+
+  .job-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4px 16px;
+    flex-wrap: wrap;
+  }
+  h3 {
+    font-size: 17.5px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .sub-role { margin-top: 2px; }
+  ul { margin: 10px 0 0 18px; }
+  li { color: var(--text); line-height: 1.5; }
+  li + li { margin-top: 6px; }
+  li strong { font-weight: 650; color: var(--ink); }
+
+  /* Level 2: a group inside a job (client work, projects) steps in again. */
+  .group { margin-top: 16px; }
+  h4 {
+    font-size: 15px;
+    line-height: 1.35;
+    font-weight: 700;
+    color: var(--soft);
+  }
+  .group .entry { margin-left: var(--indent); }
+  .group h4 + .entry { margin-top: 16px; }
+  .entry + .entry { margin-top: 16px; }
+  .entry-title { line-height: 1.5; }
+  .entry-title strong { font-size: 15.5px; font-weight: 700; color: var(--ink); }
+  .entry-title a { text-decoration: none; }
+  .entry-title a:hover { text-decoration: underline; }
+  .entry p { margin-top: 3px; color: var(--text); line-height: 1.55; overflow-wrap: break-word; }
+  .job + .entry, .entry.top + .entry.top { margin-top: 22px; }
+
+  /* Plain blocks (education, additional): no bullets, clear gaps. */
+  .block { color: var(--text); line-height: 1.55; }
+  .block + .block { margin-top: 12px; }
+  .block strong { font-weight: 700; color: var(--ink); }
+  .block .meta { display: block; margin-top: 1px; }
+  .block .meta.inline { display: inline; }
+  /* Run-in items (Additional) hang like skills so wrapped lines sit under the text. */
+  .block.run { padding-left: 20px; text-indent: -20px; }
+  .langs { display: flex; flex-wrap: wrap; gap: 6px 40px; color: var(--text); }
+  .langs strong { color: var(--ink); }
+
+  /* ---------- Small screens ---------- */
+  @media (max-width: 640px) {
+    :root { --step: 40px; --indent: 14px; --mark: 30px; }
+    .toolbar { padding: 12px 20px 0; }
+    .page { padding: 24px 20px 56px; }
+    .hero { grid-template-columns: 76px 1fr; column-gap: 18px; }
+    .portrait { width: 76px; height: 76px; border-radius: 12px; }
+    h1 { font-size: 34px; }
+    .role { font-size: 15px; margin-top: 6px; }
+    .contact-meta, .contact-links { grid-column: 1 / -1; }
+    .identity { display: contents; }
+    .identity > h1, .identity > .role { grid-column: 2; }
+    .identity > h1 { align-self: end; }
+    .identity > .role { align-self: start; }
+    .hero { grid-template-rows: auto auto; row-gap: 0; }
+    .portrait { grid-row: 1 / span 2; }
+    .contact-meta { margin-top: 20px; }
+    .summary { margin-top: 28px; }
+    .summary .lead { font-size: 16px; }
+    section { margin-top: 44px; }
+    h2 { font-size: 23px; }
+    h3 { font-size: 16.5px; }
+    .mark img { max-height: 24px; }
+    .mark .logo-epic { max-height: 28px; max-width: 26px; }
+    .mark .logo-rds { max-height: 26px; max-width: 24px; }
+    .mark .logo-kone { max-height: 12px; max-width: 30px; }
+    .mark .logo-at { max-height: 20px; max-width: 30px; }
+    .mark .logo-adidas { max-height: 20px; max-width: 28px; }
+    .skill { padding-left: 16px; text-indent: -16px; }
+    .block.run { padding-left: 16px; text-indent: -16px; }
+  }
+
+  /* ---------- Dark mode (screen only; print stays light) ---------- */
   @media screen and (prefers-color-scheme: dark) {
-    body { background: #16181d; color: #e8e8e8; }
-    .page { background: #16181d; }
-    a { color: #e8e8e8; text-decoration-color: #666; }
-    a:hover { text-decoration-color: #e8e8e8; }
-    h1 { color: #f0f0f0; }
-    .role, .contact { color: #b5b5b5; }
-    .icon-link { color: #e8e8e8; border-bottom-color: #555; }
-    .icon-link:hover { border-bottom-color: #e8e8e8; }
-    .icon-link svg { fill: #e8e8e8; }
-    .summary { color: #cfcfcf; }
-    h2 { color: #f0f0f0; border-bottom-color: #3a3f47; }
-    h3 { color: #f0f0f0; }
-    .meta, .date { color: #9a9a9a; }
-    li { color: #cfcfcf; }
-    li strong { color: #f0f0f0; }
-    .skills-list span.label { color: #f0f0f0; }
-    .entry-title { color: #f0f0f0; }
-    .client-entry p { color: #cfcfcf; }
-    .entry p { color: #cfcfcf; }
-    .logo-img { color: #e8e8e8; }
-    /* Uniform dark vector marks collapse to pure white (exact under any gamma). */
-    .client-entry .entry-logo img[src$="adidas.svg"], .client-entry .entry-logo img[src$="glivelab.svg"], img[src$="glivelab.svg"].logo-img { filter: brightness(0) invert(1); opacity: 0.94; }
-    /* Two-tone vector marks invert, then clip brights to white (dark details stay dark). */
-    .client-entry .entry-logo img[src$="kone.svg"], .client-entry .entry-logo img[src$="epic-games.svg"] { filter: invert(1) brightness(2); opacity: 0.94; }
-    /* Opaque black-on-white marks invert, then black drops out via screen blending. */
-    .logo-img, .client-entry .entry-logo img[src$=".jpg"], .client-entry .entry-logo img[src$=".png"] { filter: invert(1) contrast(2); mix-blend-mode: screen; opacity: 0.94; }
-    .toolbar button {
-      border-color: #3a3f47;
-      background: #1e2229;
-      color: #e8e8e8;
+    :root {
+      --bg: #16181d;
+      --ink: #f0f0f0;
+      --text: #cfcfcf;
+      --soft: #b5b5b5;
+      --meta: #9a9a9a;
+      --faint: #666;
+      --rule: #3a3f47;
+      --chip-bg: #1e2229;
+      --chip-bd: #3a3f47;
     }
+    .portrait { box-shadow: 0 0 0 1px var(--rule); }
+    /* Uniform dark vector marks collapse to pure white. */
+    .mark img[src$="adidas.svg"], .mark img[src$="glivelab.svg"] { filter: brightness(0) invert(1); opacity: 0.94; }
+    /* Two-tone vector marks invert, then clip brights to white. */
+    .mark img[src$="kone.svg"], .mark img[src$="epic-games.svg"] { filter: invert(1) brightness(2); opacity: 0.94; }
+    /* Opaque black-on-white rasters invert, then black drops out via screen blending. */
+    .mark img[src$=".jpg"], .mark img[src$=".png"] { filter: invert(1) contrast(2); mix-blend-mode: screen; opacity: 0.94; }
   }
-  /* Print: A4 with page margins. Disable browser headers/footers in the print dialog. */
-  @page { size: A4; margin: 10mm; }
+
+  /* ---------- Print: A4, clean breaks, no page limit ---------- */
+  @page { size: A4; margin: 13mm 14mm; }
   @media print {
+    /* Print is the screen layout scaled down: tune sizes above, tune density here. */
+    html { zoom: 0.85; }
     .toolbar { display: none; }
-    #experience { break-before: page; }
     .page { padding: 0; max-width: none; }
-    body { font-size: 12.5px; }
-    .meta { font-size: 12px; }
-    .entry-title { font-size: 13px; }
-    section { margin-bottom: 18px; }
-    .job { margin-bottom: 12px; break-inside: auto; }
-    header { break-inside: avoid; }
-    .client-entry, .entry, li { break-inside: avoid; }
+
+    /* Clean page breaks. */
+    .hero, .job-head, .entry-title, .skill, li, .block { break-inside: avoid; }
+    h2, h4, .job-head, .entry-title { break-after: avoid; }
+    /* Long entries may split, but never leave a lone line behind. */
+    p { orphans: 3; widows: 3; }
+    .tags { break-before: avoid; }
+    /* Top-align logos so a tall mark never pokes above its entry onto the previous page. */
+    .mark { align-items: flex-start; top: 1px; }
     a[href]:after { content: none !important; }
-    h2, h3 { break-after: avoid; }
-    .entry-title { break-after: avoid; }
-    h2 { margin-bottom: 8px; }
-    ul { margin-top: 4px; }
   }
 </style>
 </head>
@@ -298,202 +304,194 @@
 </div>
 
 <div class="page">
-  <header>
-    <div class="header-row">
-      <div class="header-main">
-        <h1>Emil Laine</h1>
-        <div class="role">Senior Full-Stack Developer – <span style="white-space:nowrap">end-to-end product engineering</span></div>
-        <div class="contact">
-          Helsinki, Finland · remote and on-site · <a href="mailto:laine.emil@gmail.com">laine.emil@gmail.com</a>
-          <div class="contact-links">
-            <a class="icon-link" href="https://github.com/emillaine" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-              GitHub
-            </a>
-            <a class="icon-link" href="https://www.linkedin.com/in/emillaine/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-              LinkedIn
-            </a>
-            <a class="icon-link" href="https://flogram.itch.io/" target="_blank" rel="noopener">
-              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm5.5 4.5v9l8-4.5-8-4.5z"/></svg>
-              itch.io
-            </a>
-          </div>
-        </div>
+  <header class="hero">
+    <img class="portrait" src="portrait.jpg" alt="Portrait of Emil Laine" onerror="this.style.display='none'" />
+    <div class="identity">
+      <h1>Emil Laine</h1>
+      <p class="role"><b>Senior Full-Stack Developer</b> – <span style="white-space:nowrap">end-to-end product engineering</span></p>
+      <div class="contact-meta">
+        <span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Helsinki, Finland · remote and on-site</span>
+        <a href="mailto:laine.emil@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5"/></svg>laine.emil@gmail.com</a>
       </div>
-      <img class="portrait-img" src="portrait.jpg" alt="Portrait of Emil Laine" onerror="this.style.display='none'" />
+      <div class="contact-links">
+        <a class="icon-link" href="https://github.com/emillaine" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.930 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.300 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.910 1.23 3.22 0 4.61-2.805 5.625-5.475 5.920.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+          GitHub
+        </a>
+        <a class="icon-link" href="https://www.linkedin.com/in/emillaine/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+        <a class="icon-link" href="https://flogram.itch.io/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h16a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2zm5.5 4.5v9l8-4.5-8-4.5z"/></svg>
+          itch.io
+        </a>
+      </div>
     </div>
-    <p class="summary">
+  </header>
+
+  <div class="summary">
+    <p class="lead">
       <span id="exp-years">12 years</span> of software development experience, including 7 years in software consultancy at Reaktor building full-stack products with multidisciplinary teams for international clients.
     </p>
-    <p class="summary">
+    <p>
       I do my best work where engineering meets UI/UX and visuals: design systems, interfaces, game graphics, and developer UX such as language design and tooling.
       I'm a strong written communicator, and I thrive in async-first teams or solo.
       I work in deep focus with strong attention to detail, whether that means being responsible for a whole product end to end or going deep on my part of a larger team.
     </p>
-    <p class="summary">
+    <p>
       I focus on architecture, design, specs, reviews, and quality, with AI coding agents handling implementation, staying hands-on where depth is needed.
     </p>
-  </header>
+  </div>
 
   <section>
     <h2>Skills</h2>
-    <ul class="skills-list">
-      <li><span class="label">Product engineering:</span> full-stack apps; most experienced with React, TypeScript, Node.js, and PostgreSQL – including international production apps and complete rewrites</li>
-      <li><span class="label">UI/UX, design systems, visuals:</span> component libraries, data visualization, accessibility, screen readers, CMS-driven sites, CSS/SCSS/Less, CSS-in-JS (styled-components); game graphics, shaders, procedural content; language design and developer UX</li>
-      <li><span class="label">Game development:</span> from concept to playtest to release with Unity, Unreal Engine 5 (including Blueprints), and Godot; C#, C++, Rust, and custom 2D game engines</li>
-      <li><span class="label">Systems programming:</span> C/C++, compilers (LLVM)</li>
-      <li><span class="label">Delivery &amp; collaboration:</span> embedded client teams, Agile (Kanban, Scrum), testing, CI/CD, code reviews, knowledge transfer, AI-assisted delivery (specs, parallel implementation, review-led quality)</li>
-    </ul>
+    <div class="l1">
+      <p class="skill"><b>Product engineering:</b> full-stack apps; most experienced with React, TypeScript, Node.js, and PostgreSQL – including international production apps and complete rewrites</p>
+      <p class="skill"><b>UI/UX, design systems, visuals:</b> component libraries, data visualization, accessibility, screen readers, CMS-driven sites, CSS/SCSS/Less, CSS-in-JS (styled-components); game graphics, shaders, procedural content; language design and developer UX</p>
+      <p class="skill"><b>Game development:</b> from concept to playtest to release with Unity, Unreal Engine 5 (including Blueprints), and Godot; C#, C++, Rust, and custom 2D game engines</p>
+      <p class="skill"><b>Systems programming:</b> C/C++, compilers (LLVM)</p>
+      <p class="skill"><b>Delivery &amp; collaboration:</b> embedded client teams, Agile (Kanban, Scrum), testing, CI/CD, code reviews, knowledge transfer, AI-assisted delivery (specs, parallel implementation, review-led quality)</p>
+    </div>
   </section>
 
   <section id="experience">
     <h2>Experience</h2>
+    <div class="l1">
 
-    <div class="job">
-      <div class="job-head">
-        <div class="company">
-          <img class="logo-img" src="logos/reaktor.jpg" alt="Reaktor logo" title="Reaktor" />
+      <div class="job">
+        <div class="job-head">
+          <span class="mark"><img class="logo-reaktor" src="logos/reaktor.jpg" alt="Reaktor logo" title="Reaktor" /></span>
           <h3>Reaktor – Software Developer, Consultant</h3>
+          <span class="date">2017 – 2019, 2021 – 2024</span>
         </div>
-        <span class="date">2017 – 2019, 2021 – 2024</span>
-      </div>
-      <ul>
-        <li>Delivered <strong>full-stack web applications</strong> (React, Node.js, TypeScript, PostgreSQL) in client-embedded, multidisciplinary teams.</li>
-        <li>Focused on <strong>UI-heavy, visual work</strong> – polished, accessible features with designers; raised quality via <strong>testing, reviews, and shared practices</strong>.</li>
-      </ul>
-      <div class="sub-work">
-        <h3>Selected client work</h3>
-        <div class="client-entry">
-          <span class="entry-logo"><img class="logo-epic" src="logos/epic-games.svg" alt="Epic Games logo" title="Epic Games" /></span>
-          <div>
+        <ul>
+          <li>Delivered <strong>full-stack web applications</strong> (React, Node.js, TypeScript, PostgreSQL) in client-embedded, multidisciplinary teams.</li>
+          <li>Focused on <strong>UI-heavy, visual work</strong> – polished, accessible features with designers; raised quality via <strong>testing, reviews, and shared practices</strong>.</li>
+        </ul>
+
+        <div class="group">
+          <h4>Selected client work</h4>
+          <div class="entry">
+            <span class="mark"><img class="logo-epic" src="logos/epic-games.svg" alt="Epic Games logo" title="Epic Games" /></span>
             <div class="entry-title"><strong>Epic Games – Design Systems, Senior Software Developer</strong> <span class="meta">(2021 – 2024)</span></div>
             <p>Built a cross-team React design system (components, icons, data-viz) replacing the previous MUI-based libraries with a lighter-weight system, adopted by three teams before its 1.0 release, with a focus on consistency, performance, and accessibility (screen-reader support, contrast work with designers); contributed to social overlay features such as parental PIN, shipped in Epic Games titles including Fortnite, Fall Guys, and Rocket League. <span class="meta tags">React, TypeScript, CSS, Design tokens, Data visualization, Accessibility, Snapshot testing, UI/UX</span></p>
           </div>
-        </div>
-        <div class="client-entry">
-          <span class="entry-logo"><img class="logo-at" src="logos/another-tomorrow.jpg" alt="Another Tomorrow logo" title="Another Tomorrow" /></span>
-          <div>
+          <div class="entry">
+            <span class="mark"><img class="logo-at" src="logos/another-tomorrow.jpg" alt="Another Tomorrow logo" title="Another Tomorrow" /></span>
             <div class="entry-title"><strong>Another Tomorrow – full site rewrite</strong> <span class="meta">(2021)</span></div>
             <p>In a two-developer team, shipped the full rewrite of AnotherTomorrow.co under a tight deadline – from Vue/Nuxt + Shopify to React/Gatsby + Contentful on the Chord sales platform, including the new landing page, where I focused on frontend. <span class="meta tags">React, TypeScript, Gatsby, Contentful, CSS, UI</span></p>
           </div>
-        </div>
-        <div class="client-entry">
-          <span class="entry-logo"><img class="logo-rds" src="logos/reaktor-defsec.png" alt="Reaktor Defence and Security logo" title="Reaktor Defence & Security" /></span>
-          <div>
-            <div class="entry-title"><strong>Reaktor Defence & Security</strong> <span class="meta">(2021)</span></div>
+          <div class="entry">
+            <span class="mark"><img class="logo-rds" src="logos/reaktor-defsec.png" alt="Reaktor Defence and Security logo" title="Reaktor Defence &amp; Security" /></span>
+            <div class="entry-title"><strong>Reaktor Defence &amp; Security</strong> <span class="meta">(2021)</span></div>
             <p>Full-stack development; details confidential due to client constraints. <span class="meta tags">React, Node.js, TypeScript, CSS</span></p>
           </div>
-        </div>
-        <div class="client-entry">
-          <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
-          <div>
+          <div class="entry">
+            <span class="mark"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
             <div class="entry-title"><strong>KONE Care Contract sales tool</strong> <span class="meta">(2019)</span></div>
             <p>Global maintenance-contract tool in 30+ countries; joined the USA/Canada rollout implementing new requirements, including a business-rules UI for the offer wizard. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL, CSS</span></p>
           </div>
-        </div>
-        <div class="client-entry">
-          <span class="entry-logo"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
-          <div>
+          <div class="entry">
+            <span class="mark"><img class="logo-kone" src="logos/kone.svg" alt="KONE logo" title="KONE" /></span>
             <div class="entry-title"><strong>KONE Residential Flow sales tool</strong> <span class="meta">(2018 – 2019)</span></div>
             <p>Sales tool rolled out in 20+ countries with extensive localization; auto-generated sales PDFs; Salesforce integration work; handled technical handover to the follow-up team. <span class="meta tags">React, Node.js, TypeScript, PostgreSQL, CSS, Salesforce</span></p>
           </div>
-        </div>
-        <div class="client-entry">
-          <span class="entry-logo"><img src="logos/adidas.svg" alt="Adidas logo" title="Adidas" /></span>
-          <div>
+          <div class="entry">
+            <span class="mark"><img class="logo-adidas" src="logos/adidas.svg" alt="Adidas logo" title="Adidas" /></span>
             <div class="entry-title"><strong>Adidas Glass</strong> <span class="meta">(summer 2017)</span></div>
             <p>Contributed to the React rewrite of the adidas global site; implemented responsive, accessible front-page components. <span class="meta tags">React, TypeScript, CSS, UI</span></p>
           </div>
-        </div>
-        <div class="client-entry">
-          <span class="entry-logo"></span>
-          <div>
+          <div class="entry">
             <div class="entry-title"><strong>Reaktor internal projects</strong></div>
             <p>Reaktor Hunt coding puzzle game for recruiting; meeting-room system with facial-recognition lobby screen; Guidebook offline-first PWA from prototype to MVP. <span class="meta tags">Go, WebAssembly, TypeScript, React, Node.js, CSS, PWA, UI/UX</span></p>
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="job">
-      <div class="job-head">
-        <div class="company">
-          <img class="logo-img" src="logos/glivelab.svg" alt="G Livelab logo" title="G Livelab" />
-          <h3>G Livelab – Software Developer<br /><span class="meta">(Civilian Service, Livelaboratorio Oy / Finnish Musicians' Union)</span></h3>
+      <div class="job">
+        <div class="job-head">
+          <span class="mark"><img class="logo-glivelab" src="logos/glivelab.svg" alt="G Livelab logo" title="G Livelab" /></span>
+          <h3>G Livelab – Software Developer</h3>
+          <span class="date">2020</span>
         </div>
-        <span class="date">2020</span>
+        <p class="meta sub-role">(Civilian Service, Livelaboratorio Oy / Finnish Musicians' Union)</p>
+        <ul>
+          <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta tags">Node.js, Flow, Mux, MongoDB</span></li>
+          <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket, product/inventory, customer/employee management, and the website.</li>
+          <li>Also contributed to <strong>Radio Helsinki</strong> web features (operated by the same owner).</li>
+        </ul>
       </div>
-      <ul>
-        <li>Shipped <strong>live-event streaming in two weeks</strong> when COVID closed venues – backend + UIs for managing and streaming events, later on-demand video. <span class="meta tags">Node.js, Flow, Mux, MongoDB</span></li>
-        <li>Designed and built <strong>CMS and end-user features</strong> across event/ticket, product/inventory, customer/employee management, and the website.</li>
-        <li>Also contributed to <strong>Radio Helsinki</strong> web features (operated by the same owner).</li>
-      </ul>
+
     </div>
   </section>
 
   <section id="independent">
     <h2>Independent work</h2>
+    <div class="l1">
 
-    <div class="job">
-      <div class="job-head">
-        <h3>Game Developer</h3>
-        <span class="date">2024 – Present</span>
+      <div class="job">
+        <div class="job-head">
+          <h3>Game Developer</h3>
+          <span class="date">2024 – Present</span>
+        </div>
+        <ul>
+          <li>Full-time focus on <strong>game development</strong>: game design, graphics, and playable prototypes.</li>
+          <li>Shipped <strong>multiple prototypes with playtests</strong> across Unity, Unreal Engine 5, and Godot – concept to build, end to end.</li>
+          <li>Studied <strong>game graphics</strong>: pixel art and 3D (Blender), shaders (GLSL/HLSL, Material/Shader Graph), procedural content (UE5 PCG, geometry nodes).</li>
+        </ul>
+
+        <div class="group">
+          <div class="entry">
+            <div class="entry-title"><strong>Alchemist – roguelike game</strong> <span class="meta">(2026)</span></div>
+            <p>2D pixel-art roguelike with emergent mechanics and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests. <span class="meta tags">Godot, C#, Pixel art, Audio integration, AI-assisted development</span></p>
+          </div>
+          <div class="entry">
+            <div class="entry-title"><strong>Kaiku – first-person exploration game</strong> <span class="meta">(2026)</span></div>
+            <p>Whole world generated at design time using UE5 PCG graphs operating on hand-drawn splines in 3D space to carve mountains, forests, paths, different biomes, lakes, bridges, etc. <span class="meta tags">Unreal Engine 5, Tech art, 3D modeling, Shaders, Procedural content generation</span></p>
+          </div>
+          <div class="entry">
+            <div class="entry-title"><strong><a href="https://flogram.itch.io/untitled-puzzle-game" target="_blank" rel="noopener">The Observer Effect – first-person puzzle game</a></strong> <span class="meta">(2024 – 2026)</span></div>
+            <p>Perspective puzzles – interact with hidden shapes embedded in the environment when looking at the right angle. <span class="meta tags">Unreal Engine 5, Tech art, Shaders, Gameplay systems, Puzzle design</span></p>
+          </div>
+        </div>
       </div>
-      <ul>
-        <li>Full-time focus on <strong>game development</strong>: game design, graphics, and playable prototypes.</li>
-        <li>Shipped <strong>multiple prototypes with playtests</strong> across Unity, Unreal Engine 5, and Godot – concept to build, end to end.</li>
-        <li>Studied <strong>game graphics</strong>: pixel art and 3D (Blender), shaders (GLSL/HLSL, Material/Shader Graph), procedural content (UE5 PCG, geometry nodes).</li>
-      </ul>
-      <div class="sub-work">
-        <div class="entry">
-        <div class="entry-title"><strong>Alchemist – roguelike game</strong> <span class="meta">(2026)</span></div>
-        <p>2D pixel-art roguelike with emergent mechanics and procedural dungeons – systems for interaction, enemy AI, and items, with automated tests. <span class="meta tags">Godot, C#, Pixel art, Audio integration, AI-assisted development</span></p>
-        </div>
-        <div class="entry">
-        <div class="entry-title"><strong>Kaiku – first-person exploration game</strong> <span class="meta">(2026)</span></div>
-        <p>Whole world generated at design time using UE5 PCG graphs operating on hand-drawn splines in 3D space to carve mountains, forests, paths, different biomes, lakes, bridges, etc. <span class="meta tags">Unreal Engine 5, Tech art, 3D modeling, Shaders, Procedural content generation</span></p>
-        </div>
-        <div class="entry">
-        <div class="entry-title"><strong><a href="https://flogram.itch.io/untitled-puzzle-game" target="_blank" rel="noopener">The Observer Effect – first-person puzzle game</a></strong> <span class="meta">(2024 – 2026)</span></div>
-        <p>Perspective puzzles – interact with hidden shapes embedded in the environment when looking at the right angle. <span class="meta tags">Unreal Engine 5, Tech art, Shaders, Gameplay systems, Puzzle design</span></p>
-        </div>
+
+      <div class="entry top">
+        <div class="entry-title"><strong><a href="https://github.com/emillaine/cx" target="_blank" rel="noopener">C* – systems programming language</a></strong> <span class="meta">(2017 – 2021)</span></div>
+        <p>Designed and built a modern systems language for performance + productivity with attention to syntax and developer UX: compiler, test suite, <a href="https://emillaine.github.io/cx/" target="_blank" rel="noopener">project site</a>. <span class="meta tags">C++, LLVM/Clang · <span data-stars="emillaine/cx">144 ★</span></span></p>
       </div>
+      <div class="entry top">
+        <div class="entry-title"><strong><a href="https://github.com/emillaine/ts-llvm" target="_blank" rel="noopener">ts-llvm – TypeScript to LLVM compiler</a></strong> <span class="meta">(2018)</span></div>
+        <p>Compiles strictly-typed TypeScript to LLVM IR via the TypeScript Compiler API, targeting native code / WebAssembly, with a small C++ runtime for built-in APIs. <span class="meta tags">TypeScript, C++, LLVM · <span data-stars="emillaine/ts-llvm">293 ★</span></span></p>
+      </div>
+
     </div>
-
-      <div class="entry">
-      <div class="entry-title"><strong><a href="https://github.com/emillaine/cx" target="_blank" rel="noopener">C* – systems programming language</a></strong> <span class="meta">(2017 – 2021)</span></div>
-      <p>Designed and built a modern systems language for performance + productivity with attention to syntax and developer UX: compiler, test suite, <a href="https://emillaine.github.io/cx/" target="_blank" rel="noopener">project site</a>. <span class="meta tags">C++, LLVM/Clang · <span data-stars="emillaine/cx">144 ★</span></span></p>
-      </div>
-      <div class="entry">
-      <div class="entry-title"><strong><a href="https://github.com/emillaine/ts-llvm" target="_blank" rel="noopener">ts-llvm – TypeScript to LLVM compiler</a></strong> <span class="meta">(2018)</span></div>
-      <p>Compiles strictly-typed TypeScript to LLVM IR via the TypeScript Compiler API, targeting native code / WebAssembly, with a small C++ runtime for built-in APIs. <span class="meta tags">TypeScript, C++, LLVM · <span data-stars="emillaine/ts-llvm">293 ★</span></span></p>
-      </div>
   </section>
 
   <section>
     <h2>Languages</h2>
-    <ul class="flat-list">
-      <li><span><strong>Finnish</strong> <span class="meta">– native</span></span><span><strong>English</strong> <span class="meta">– fluent</span></span></li>
-    </ul>
+    <div class="l1">
+      <p class="langs"><span><strong>Finnish</strong> <span class="meta">– native</span></span><span><strong>English</strong> <span class="meta">– fluent</span></span></p>
+    </div>
   </section>
 
   <section>
     <h2>Education</h2>
-    <ul>
-      <li><strong>Computer Science studies, University of Helsinki</strong> <span class="meta">(2015 – 2018)</span><br /><span class="meta">Focus: full-stack web dev, programming languages, compilers, game dev</span></li>
-      <li><strong>3D Game Graphics studies, Helsinki Vocational College (Stadin AO)</strong> <span class="meta">(2026)</span><br /><span class="meta"><span style="white-space:nowrap">3D modeling/texturing</span> and a team game project as project and tech-art lead</span></li>
-    </ul>
+    <div class="l1">
+      <p class="block"><strong>Computer Science studies, University of Helsinki</strong> <span class="meta inline">(2015 – 2018)</span><span class="meta">Focus: full-stack web dev, programming languages, compilers, game dev</span></p>
+      <p class="block"><strong>3D Game Graphics studies, Helsinki Vocational College (Stadin AO)</strong> <span class="meta inline">(2026)</span><span class="meta"><span style="white-space:nowrap">3D modeling/texturing</span> and a team game project as project and tech-art lead</span></p>
+    </div>
   </section>
 
   <section>
     <h2>Additional</h2>
-    <ul>
-      <li><strong><a href="https://stackoverflow.com/users/3425536/flogram-dev" target="_blank" rel="noopener">Stack Overflow</a></strong> – 43k reputation, 917 answers, 4.0M people reached. 8 gold badges incl. C++.</li>
-      <li><strong>Open source</strong> – experience contributing to and maintaining open-source projects.</li>
-      <li><strong>Hackathons & game jams</strong> – <a href="https://diandrakathyusha.itch.io/say-my-name" target="_blank" rel="noopener">Global Game Jam 2026</a>, <a href="https://flogram.itch.io/unsafe-space" target="_blank" rel="noopener">GMTK 2024</a>, <a href="https://flogram.itch.io/summon-and-chill" target="_blank" rel="noopener">Ludum Dare 55</a>, Junction 2018, Tournament Game Jam at Microsoft Flux, Elo Data Science Hackathon.</li>
-      <li><strong>Electronic music as <a href="https://linktr.ee/flogram" target="_blank" rel="noopener">Flogram</a> (2011 – Present):</strong> releases on streaming platforms, DJ gigs, audio design, and atmospheric work for interactive projects.</li>
-    </ul>
+    <div class="l1">
+      <p class="block run"><strong><a href="https://stackoverflow.com/users/3425536/flogram-dev" target="_blank" rel="noopener">Stack Overflow</a></strong> – 43k reputation, 917 answers, 4.0M people reached. 8 gold badges incl. C++.</p>
+      <p class="block run"><strong>Open source</strong> – experience contributing to and maintaining open-source projects.</p>
+      <p class="block run"><strong>Hackathons &amp; game jams</strong> – <a href="https://diandrakathyusha.itch.io/say-my-name" target="_blank" rel="noopener">Global Game Jam 2026</a>, <a href="https://flogram.itch.io/unsafe-space" target="_blank" rel="noopener">GMTK 2024</a>, <a href="https://flogram.itch.io/summon-and-chill" target="_blank" rel="noopener">Ludum Dare 55</a>, Junction 2018, Tournament Game Jam at Microsoft Flux, Elo Data Science Hackathon.</p>
+      <p class="block run"><strong>Electronic music as <a href="https://linktr.ee/flogram" target="_blank" rel="noopener">Flogram</a> (2011 – Present):</strong> releases on streaming platforms, DJ gigs, audio design, and atmospheric work for interactive projects.</p>
+    </div>
   </section>
 
 </div>
@@ -523,7 +521,7 @@
       .then(function (res) { return res.ok ? res.json() : null; })
       .then(function (data) {
         if (data && typeof data.stargazers_count === 'number') {
-          node.textContent = data.stargazers_count + ' \u2605';
+          node.textContent = data.stargazers_count + ' ★';
         }
       })
       .catch(function () { /* keep fallback */ });
